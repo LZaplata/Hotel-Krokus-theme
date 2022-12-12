@@ -1,0 +1,15 @@
+name: 'Hotel Krokus'
+description: 'Theme for hotel Krokus from Pec pod Sněžkou.'
+author: 'Lukáš Záplata'
+homepage: ''
+authorCode: LZaplata
+code: hotelkrokus
+parent: ''
+database: '0'
+require:
+    - initbiz.seostorm
+    - rainlab.pages
+    - rainlab.translate
+    - lzaplata.gallery
+translate:
+    cs: lang/cs.yaml

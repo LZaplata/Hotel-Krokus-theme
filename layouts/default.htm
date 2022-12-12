@@ -1,0 +1,73 @@
+[staticMenu mainmenu]
+code = "main-menu"
+
+[staticMenu offcanvasmenu]
+code = "main-menu"
+
+[staticMenu footermenu]
+code = "main-menu"
+
+[staticMenu links]
+code = "links"
+
+[seo]
+
+[sitePicker sitepicker]
+
+[global social_network]
+handle = "Settings\SocialNetworks"
+
+[global contact]
+handle = "Settings\Contacts"
+
+[global booking]
+handle = "Settings\Booking"
+
+[global reviews]
+handle = "Settings\Reviews"
+
+[global footer]
+handle = "Settings\Footer"
+==
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {% component "seo" %}
+
+        <link rel="stylesheet" href="{{ [
+            'assets/css/theme.css',
+            'assets/css/lightgallery.css',
+            'assets/css/lg-zoom.css',
+            'assets/css/lg-thumbnail.css',
+            'assets/css/swiper-bundle.css',
+        ]|theme }}" />
+    </head>
+
+    <body>
+        {% partial "header" %}
+
+        <main>
+            {% page %}
+        </main>
+
+        {% partial "footer" %}
+        {% partial "offcanvas" %}
+
+        <script src="{{ [
+            'assets/js/jquery.min.js',
+            'assets/js/popper.js',
+            'assets/js/bootstrap.js',
+            'assets/js/lightgallery.min.js',
+            'assets/js/lg-zoom.min.js',
+            'assets/js/lg-thumbnail.min.js',
+            'assets/js/swiper-bundle.js',
+            'assets/js/theme.js',
+        ]|theme }}"></script>
+
+        {% scripts %}
+    </body>
+</html>

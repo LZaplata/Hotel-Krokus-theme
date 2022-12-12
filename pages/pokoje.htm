@@ -1,0 +1,175 @@
+title = "Pokoje"
+layout = "default"
+url = "/pokoje"
+
+[collection banners]
+handle = "Rooms\Banner"
+
+[section content]
+handle = "Rooms\Content"
+
+[collection rooms]
+handle = "Rooms\Room"
+==
+{% partial "banner/default" banners=banners %}
+
+<div class="container-fluid py-5" id="content">
+    <div class="container-lg py-xl-5">
+        <h{{ banners.getIterator().count > 0 ? 2 : 1}} class="text-center">
+            {{ content.heading }}
+        </h{{ banners.getIterator().count > 0 ? 2 : 1}}>
+
+        {% if content.text %}
+            <div class="text text-center fs-24 lh-34 mt-3">
+                {{ content.text|raw }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if rooms.getIterator().count > 0 %}
+    <div class="container-fluid px-0 px-md-40" id="separator">
+        <p class="text-center fs-11 ls-3 text-uppercase mb-2 fw-semibold">
+            {{ "rooms.choose_room"|_ }}
+        </p>
+
+        <div class="text-center position-relative">
+            <span class="d-inline-flex align-items-center justify-content-center border border-1 border-gray rounded-circle bg-white position-relative">
+                <img src="{{ 'assets/images/icons/arrow-down.svg'|theme }}" alt="arrow" class="of-none">
+            </span>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5" id="rooms">
+        <div class="container-lg py-xl-5">
+            <div class="rooms d-flex flex-column gap-5 gap-xl-100">
+                {% for room in rooms %}
+                    <div class="room position-relative d-lg-flex {{ loop.index is odd ? 'odd' : 'even justify-content-lg-end' }}">
+                        {% if room.gallery.count > 0 %}
+                            <div class="gallery w-lg-75">
+                                <div class="swiper room-gallery-swiper">
+                                    <div class="swiper-wrapper">
+                                        {% for image in room.gallery %}
+                                            <div class="swiper-slide">
+                                                <a href="{{ image.path }}" title="{{ image.description }}" class="swiper-image">
+                                                    <img src="{{ image.thumb(872, 684, {"mode": "crop"}) }}" alt="{{ image.title }}" class="img-fluid w-100">
+                                                </a>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="swiper-button-next rounded-circle">
+                                        <img src="{{ 'assets/images/icons/angle-right.svg'|theme }}" alt="right">
+                                    </div>
+
+                                    <div class="swiper-button-prev rounded-circle">
+                                        <img src="{{ 'assets/images/icons/angle-left.svg'|theme }}" alt="left">
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <div class="info bg-black-light p-32 w-lg-45 w-xl-35">
+                            <p class="h3 title text-white fs-24 lh-36 mb-0">
+                                {{ room.title }}
+                            </p>
+
+                            {% if room.equipment.count > 0 %}
+                                {% if room.equipment.count > 5 and room.equipment.count <= 10 %}
+                                    {% set more_class = "d-lg-inline-flex d-xl-none" %}
+                                {% elseif room.equipment.count > 10 and room.equipment.count <= 12 %}
+                                    {% set more_class = "d-lg-inline-flex d-xxl-none" %}
+                                {% elseif room.equipment.count > 12 %}
+                                    {% set more_class = "d-lg-inline-flex" %}
+                                {% else %}
+                                    {% set more_class = "" %}
+                                {% endif %}
+
+                                <div class="equipment mt-32 d-flex flex-column gap-2">
+                                    {% for item in room.equipment %}
+                                        {% if loop.index > 5 and loop.index <= 10 %}
+                                            {% set class = "d-lg-none d-xl-flex" %}
+                                        {% elseif loop.index > 10 and loop.index <= 12 %}
+                                            {% set class = "d-lg-none d-xxl-flex" %}
+                                        {% elseif loop.index > 12 %}
+                                            {% set class = "d-lg-none" %}
+                                        {% endif %}
+
+                                        <div class="item d-flex align-items-start {{ class }}">
+                                            {% if item.icon %}
+                                                <img src="{{ item.icon.thumb(25, 25, {"mode": "crop"}) }}" alt="{{ item.icon.description }}" class="me-2">
+                                            {% endif %}
+
+                                            <span class="fs-17 text-white">
+                                                {{ item.title }}
+                                            </span>
+                                        </div>
+                                    {% endfor %}
+
+                                    <a href="#room-{{ room.id }}-equipment" class="text-white opacity-65 opacity-100-hover transition d-none {{ more_class }}" data-bs-toggle="modal">
+                                        {{ "rooms.equipment.show_all"|_ }}
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                            {% if room.booking_link %}
+                                <p class="mb-0 mt-32">
+                                    <a href="{{ room.booking_link }}" target="_blank" class="btn btn-white btn-sm w-100">
+                                        {{ "rooms.book_room"|_ }}
+                                    </a>
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="room-{{ room.id }}-equipment">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header align-items-start">
+                                    <p class="modal-title h3 mb-0 text-white">
+                                        {{ room.title }}
+                                    </p>
+
+                                    <a href="" data-bs-dismiss="modal" class="mi-close bg-white opacity-65 opacity-100-hover transition mt-1 ms-3"></a>
+                                </div>
+
+                                <div class="modal-body pt-0 d-flex flex-column gap-2">
+                                    {% for item in room.equipment %}
+                                        <div class="item d-flex align-items-start">
+                                            {% if item.icon %}
+                                                <img src="{{ item.icon.thumb(25, 25, {"mode": "crop"}) }}" alt="{{ item.icon.description }}" class="me-2">
+                                            {% endif %}
+
+                                            <span class="fs-17 text-white">
+                                                {{ item.title }}
+                                            </span>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if rooms.getIterator().count > 0 %}
+    {% put scripts %}
+        <script>
+            lightGallery(document.getElementById("rooms"), {
+                selector: ".swiper-image",
+                plugins: [lgZoom, lgThumbnail],
+                speed: 500,
+            });
+
+            var roomGallerySwiper = new Swiper(".room-gallery-swiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
+    {% endput %}
+{% endif %}

@@ -1,0 +1,37 @@
+{% if banners.getIterator().count > 0 %}
+    <div class="container-fluid px-0 px-md-40 mt-4" id="banner">
+        {% for banner in banners %}
+            <div class="swiper banner-swiper">
+                <div class="swiper-wrapper">
+                    {% for banner in banners %}
+                        <div class="swiper-slide position-relative">
+                            {% if banner.image %}
+                                <img src="{{ banner.image.path }}" alt="{{ banner.image.description }}" class="img-fluid">
+
+                                <div class="position-absolute w-100 h-100 start-0 top-0 gradient"></div>
+                            {% endif %}
+
+                            {% if banner.title or banner.description %}
+                                <div class="container-lg position-absolute h-100 start-50 top-0 translate-middle-x d-flex align-items-center justify-content-center">
+                                    <div class="d-flex flex-column gap-1 px-3">
+                                        {% if banner.heading %}
+                                            <h1 class="mb-0 fs-72 lh-74 text-white text-center">
+                                                {{ banner.heading }}
+                                            </h1>
+                                        {% endif %}
+
+                                        {% if banner.description %}
+                                            <p class="mb-0 text-white fs-22 text-center ff-montserrat">
+                                                {{ banner.description }}
+                                            </p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

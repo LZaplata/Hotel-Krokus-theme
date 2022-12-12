@@ -1,0 +1,306 @@
+@import "custom"
+
+@mixin mask-image($image, $width: 32, $height: 32)
+    mask-image: url("../images/#{$image}.svg")
+    -webkit-mask-image: url("../images/#{$image}.svg")
+    mask-size: cover
+    -webkit-mask-size: cover
+    width: #{$width}px
+    height: #{$height}px
+    display: block
+
+.mi
+    &-facebook
+        @include mask-image("icons/facebook")
+
+    &-instagram
+        @include mask-image("icons/instagram")
+
+    &-logo
+        @include mask-image("logo", 168, 65)
+
+    &-hamburger
+        @include mask-image("icons/hamburger")
+
+    &-close
+        @include mask-image("icons/close")
+
+    &-signature
+        @include mask-image("signature", 85, 25)
+
+    &-40
+        width: 40px
+        height: 40px
+
+
+.btn
+    letter-spacing: map-get($letter-spacings, "05")
+    text-transform: uppercase
+
+    &.btn-sm
+        --bs-btn-font-weight: var(--bs-font-weight-bold)
+
+    &.btn-green
+        --bs-btn-bg: var(--bs-green)
+        --bs-btn-border-color: var(--bs-green)
+        --bs-btn-hover-bg: var(--bs-green-light)
+        --bs-btn-hover-border-color: var(--bs-green-light)
+        --bs-btn-active-bg: var(--bs-green-light)
+        --bs-btn-active-border-color: var(--bs-green-light)
+
+    &.btn-outline-white
+        --bs-btn-color: var(--bs-black-light)
+        --bs-btn-border-color: var(--bs-gray)
+        --bs-btn-hover-bg: var(--bs-gray-500)
+        --bs-btn-hover-border-color: var(--bs-gray)
+        --bs-btn-active-bg: var(--bs-gray-500)
+        --bs-btn-active-border-color: var(--bs-gray)
+
+    &.btn-white
+        --bs-btn-hover-bg: var(--bs-gray-500)
+        --bs-btn-active-bg: var(--bs-gray-500)
+        --bs-btn-active-border-color: var(--bs-gray-500)
+
+.border-dashed
+    --bs-border-style: dashed
+
+header
+    .top
+        background: rgba(var(--bs-gray-rgb), .45)
+        z-index: 1
+
+        .sitepicker
+            ul
+                li
+                    & > div
+                        max-height: 0
+                        overflow: hidden
+                        left: -1rem
+
+                        & > ul
+                            box-shadow: 0 4px 8px 0 rgba(var(--bs-black-light-rgb), .15)
+
+                            li
+                                a
+                                    &:hover
+                                        img
+                                            opacity: .5
+
+                    &:hover
+                        & > div
+                            max-height: 100px
+
+    .nav
+        li
+            a
+                position: relative
+
+                &:after
+                    content: ""
+                    position: absolute
+                    bottom: -3px
+                    left: 0
+                    width: 0%
+                    height: 1px
+                    background: var(--bs-green-light)
+                    transition: $transition-base
+
+                &:hover
+                    &:after
+                        width: 100%
+
+                &.active
+                    &:after
+                        width: 100%
+                        background: var(--bs-green) !important
+
+#offcanvas
+    .nav
+        li
+            a
+                span
+                    position: relative
+
+                &.active
+                    span
+                        &:after
+                            content: ""
+                            position: absolute
+                            bottom: -3px
+                            left: 0
+                            height: 1px
+                            background: var(--bs-green)
+                            transition: $transition-base
+                            width: 100%
+
+#banner
+    .swiper
+        .swiper-wrapper
+            .swiper-slide
+                img
+                    @include media-breakpoint-down(md)
+                        height: 400px
+                        object-fit: cover
+
+                .gradient
+                    background: linear-gradient(180deg, transparent 0%, var(--bs-black-light) 100%)
+
+#chessboard
+    .row
+        .content
+            p
+                line-height: map-get($line-heights, 30)
+
+                &:last-child
+                    margin-bottom: 0
+
+        .img
+            &:after
+                content: ""
+                width: 110px
+                height: 110px
+                background: url("../images/icons/dots-border-right-top.svg")
+                position: absolute
+                top: -25px
+                right: -25px
+
+            &.left
+                &:after
+                    background: url("../images/icons/dots-border-left-top.svg")
+                    top: -25px
+                    right: auto
+                    left: -25px
+
+.advantages
+    .advantage
+        .text
+            p
+                &:last-child
+                    margin-bottom: 0
+
+        .excerpt
+            p
+                &:last-child
+                    margin-bottom: 0
+
+    &-lg
+        .advantage
+            .icon
+                span
+                    background: url("../images/icon-bg.png")
+                    width: 72px
+                    height: 72px
+
+            &:nth-child(n+2)
+                &:after
+                    content: ""
+                    height: 1px
+                    background: var(--bs-gray)
+                    top: 0 - calc((map-get($spacers, 5) / 2))
+                    left: calc(map-get($spacers, 5) / 2)
+                    right: calc(map-get($spacers, 5) / 2)
+                    position: absolute
+
+            @include media-breakpoint-up(md)
+                &:nth-child(2)
+                    &:after
+                        height: 0
+
+                &:nth-child(2n)
+                    &:before
+                        content: ""
+                        width: 1px
+                        background: var(--bs-gray)
+                        top: 0
+                        bottom: 0
+                        left: 0
+                        position: absolute
+.gallery-swiper
+    .swiper-wrapper
+        .swiper-slide
+            .swiper-image
+                &:hover
+                    .overlay
+                        background: rgba(var(--bs-black-light-rgb), .45)
+                        opacity: 1
+
+                .overlay
+                    background: rgba(var(--bs-black-light-rgb), .45)
+                    opacity: 0
+
+#separator
+    & > div
+        span
+            width: 64px
+            height: 64px
+            z-index: 1
+
+        &:before
+            content: ""
+            height: 1px
+            width: 50%
+            background: var(--bs-gray)
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+
+        &:after
+            content: ""
+            height: 1px
+            width: 50%
+            background: var(--bs-gray)
+            position: absolute
+            right: 0
+            top: 50%
+            transform: translateY(-50%)
+
+#rooms
+    .rooms
+        .room
+            .info
+                @include media-breakpoint-up(lg)
+                    position: absolute
+                    right: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    z-index: 1
+
+            &.even
+                .info
+                    @include media-breakpoint-up(lg)
+                        left: 0
+                        right: auto
+
+                .gallery
+                    .room-gallery-swiper
+                        .swiper-button-prev, .swiper-button-next
+                            left: auto
+
+                        .swiper-button-prev
+                            right: 67px
+
+                        .swiper-button-next
+                            right: 30px
+
+            .gallery
+                .room-gallery-swiper
+                    .swiper-button-prev, .swiper-button-next
+                        width: 32px
+                        height: 32px
+                        background: rgba(var(--bs-black-light-rgb), .35)
+                        bottom: 30px
+                        top: auto
+                        right: auto
+
+                        &:after
+                            content: none
+
+                        &.swiper-button-disabled
+                            opacity: 1
+
+                    .swiper-button-prev
+                        left: 30px
+
+                    .swiper-button-next
+                        left: 67px

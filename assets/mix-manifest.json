@@ -1,0 +1,19 @@
+{
+    "/js/theme.js": "/js/theme.js",
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/popper.js": "/js/popper.js",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/lightgallery.min.js": "/js/lightgallery.min.js",
+    "/js/lg-zoom.min.js": "/js/lg-zoom.min.js",
+    "/js/lg-thumbnail.min.js": "/js/lg-thumbnail.min.js",
+    "/js/swiper-bundle.js": "/js/swiper-bundle.js",
+    "/css/theme.css": "/css/theme.css",
+    "/css/swiper-bundle.css": "/css/swiper-bundle.css",
+    "/css/lg-thumbnail.css": "/css/lg-thumbnail.css",
+    "/css/lg-zoom.css": "/css/lg-zoom.css",
+    "/css/lightgallery.css": "/css/lightgallery.css",
+    "/fonts/lg.svg": "/fonts/lg.svg",
+    "/fonts/lg.ttf": "/fonts/lg.ttf",
+    "/fonts/lg.woff": "/fonts/lg.woff",
+    "/fonts/lg.woff2": "/fonts/lg.woff2"
+}

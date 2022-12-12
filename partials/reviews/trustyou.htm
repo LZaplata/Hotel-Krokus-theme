@@ -1,0 +1,15 @@
+<script src="https://api.trustyou.com/static/3rdparty/iframe-resizer/js/iframeResizer.min.js"></script>
+
+<div class="row">
+    {% if reviews.previo_score_widget %}
+        <div class="col-12 col-md-6">
+            <iframe src="{{ reviews.previo_score_widget }}" frameborder="0" class="w-100"></iframe>
+        </div>
+    {% endif %}
+
+    <div class="col">
+        <iframe src="{{ reviews.widget }}" frameborder="0" class="w-100"></iframe>
+    </div>
+</div>
+
+<script>iFrameResize({});</script>

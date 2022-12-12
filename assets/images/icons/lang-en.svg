@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="flag-icon-css-gb"
+   viewBox="0 0 22.66445 16.999998"
+   version="1.1"
+   sodipodi:docname="lang-en.svg"
+   width="22.66445"
+   height="16.999998"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4720"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="21.56"
+     inkscape:cx="20.222634"
+     inkscape:cy="9.9489794"
+     inkscape:window-width="1680"
+     inkscape:window-height="997"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="flag-icon-css-gb" />
+  <defs
+     id="defs4705">
+    <clipPath
+       id="a">
+      <path
+         fill-opacity="0.7"
+         d="M -85.3,0 H 597.3 V 512 H -85.3 Z"
+         id="path4702" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#a)"
+     transform="matrix(0.03320312,0,0,0.03320312,2.8322261,0)"
+     id="g4717">
+    <g
+       stroke-width="1pt"
+       id="g4715">
+      <path
+         fill="#000066"
+         d="M -256,0 H 768 V 512 H -256 Z"
+         id="path4707" />
+      <path
+         fill="#ffffff"
+         d="M -256,0 V 57.2 L 653.5,512 H 768 V 454.8 L -141.5,0 Z M 768,0 V 57.2 L -141.5,512 H -256 V 454.8 L 653.5,0 Z"
+         id="path4709" />
+      <path
+         fill="#ffffff"
+         d="M 170.7,0 V 512 H 341.3 V 0 Z M -256,170.7 V 341.3 H 768 V 170.7 Z"
+         id="path4711" />
+      <path
+         fill="#cc0000"
+         d="M -256,204.8 V 307.2 H 768 V 204.8 Z M 204.8,0 V 512 H 307.2 V 0 Z M -256,512 85.3,341.3 h 76.4 L -179.7,512 Z M -256,0 85.3,170.7 H 9 L -256,38.2 Z M 350.4,170.7 691.7,0 H 768 L 426.7,170.7 Z M 768,512 426.7,341.3 H 503 l 265,132.5 z"
+         id="path4713" />
+    </g>
+  </g>
+</svg>

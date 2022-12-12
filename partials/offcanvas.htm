@@ -1,0 +1,41 @@
+<div class="offcanvas offcanvas-end" id="offcanvas">
+    <div class="container-fluid py-3 h-100">
+        <div class="container-lg d-flex flex-column h-100">
+            <div class="row row-cols-2 align-items-center">
+                <div class="col">
+                    <a href="{{ 'homepage'|page }}" class="bg-green mi-logo"></a>
+                </div>
+
+                <div class="col d-flex justify-content-end">
+                    <a href="#offcanvas" data-bs-dismiss="offcanvas" class="bg-green mi-close"></a>
+                </div>
+            </div>
+
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                {% component "offcanvasmenu" %}
+            </div>
+
+            <div class="row row-cols-2 align-items-center">
+                <div class="col">
+                    <div class="d-flex gap-3">
+                        {% for site in sitepicker.sites %}
+                            <a href="{{ site.url }}" class="d-inline-flex">
+                                <img src="{{ ['assets/images/icons/lang-', site.code, '.svg']|join|theme }}" alt="{{ site.code }}" class="transition">
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-end">
+                    {% if social_network.facebook %}
+                        <a href="{{ social_network.facebook }}" target="_blank" class="d-inline-block bg-black-light mi-facebook"></a>
+                    {% endif %}
+
+                    {% if social_network.instagram %}
+                        <a href="{{ social_network.instagram }}" target="_blank" class="d-inline-block bg-black-light mi-instagram"></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

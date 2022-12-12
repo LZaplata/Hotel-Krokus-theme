@@ -1,0 +1,132 @@
+items:
+    -
+        title: Hotel
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: homepage
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: Hotel
+    -
+        title: Pokoje
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: pokoje
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: Rooms
+    -
+        title: Restaurace
+        type: cms-page
+        code: ''
+        reference: restaurace
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: Restaurace
+                    url: /
+    -
+        title: Wellness
+        nesting: null
+        type: url
+        url: /
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: Wellness
+                    url: /
+    -
+        title: Galerie
+        nesting: null
+        type: url
+        url: /
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: Galerie
+                    url: /
+    -
+        title: Bonus
+        nesting: null
+        type: url
+        url: /
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: Bonus
+                    url: /
+    -
+        title: Kontakt
+        nesting: null
+        type: url
+        url: /
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: Kontakt
+                    url: /
+    -
+        title: 'V Peci'
+        nesting: null
+        type: url
+        url: /
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: 'V Peci'
+                    url: /
+name: 'Hlavní menu'

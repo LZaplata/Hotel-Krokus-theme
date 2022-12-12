@@ -1,0 +1,5 @@
+{% if __SELF__.menuItems %}
+    <ul class="nav gap-40 align-items-center">
+        {% partial __SELF__ ~ "::items" items=__SELF__.menuItems %}
+    </ul>
+{% endif %}

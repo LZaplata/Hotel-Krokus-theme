@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$enable-negative-margins:       true;
+
+$theme-colors: (
+    "black":                    #000000,
+    "black-light":              #181818,    // rgb(24, 24, 24)
+    "white":                    #ffffff,
+    "green":                    #106338,
+    "green-light":              #18854c,
+    "gray-100":                 #f7f7f7,
+    "gray":                     #e1dbd6,    // rgb(225, 219, 214)
+    "gray-300":                 #f3f3ee,
+    "gray-500":                 #f5f0ec,
+);
+
+$font-sizes: (
+    11:                         .6875rem,
+    12:                         .75rem,
+    13:                         .8125rem,
+    14:                         0.875rem,
+    16:                         1rem,
+    17:                         1.0625rem,
+    22:                         1.375rem,
+    24:                         1.5rem,
+    40:                         2.5rem,
+    64:                         4rem,
+    72:                         4.5rem,
+);
+
+$font-weights: (
+    "regular":                  400,
+    "medium":                   500,
+    "semibold":                 600,
+    "bold":                     700,
+);
+
+$letter-spacings: (
+    "05":                       .5px,
+    2:                          2px,
+    3:                          3px,
+);
+
+$line-heights: (
+    20:                         1.25rem,
+    24:                         1.5rem,
+    30:                         1.875rem,
+    34:                         2.125rem,
+    36:                         2.25rem,
+    74:                         4.625rem,
+);
+
+$spacer:                        1rem;
+$spacers: (
+    0:                          0,
+    1:                          $spacer * .25,
+    2:                          $spacer * .5,
+    3:                          $spacer,
+    4:                          $spacer * 1.5,
+    5:                          $spacer * 3,
+    32:                         32px,
+    40:                         40px,
+    100:                        100px,
+);
+
+$link-decoration:               underline;
+$link-color:                    map-get($theme-colors, "green");
+$link-hover-color:              map-get($theme-colors, "green-light");
+
+$font-family-montserrat:        "Montserrat", sans-serif;
+$font-family-lora:              "Lora", sans-serif;
+$font-family-base:              $font-family-montserrat;
+$font-size-base:                map-get($font-sizes, 17);
+$font-weight-base:              map-get($font-weights, "regular");
+$font-weight-bold:              map-get($font-weights, "semibold");
+
+$headings-font-family:          $font-family-lora;
+$headings-color:                map-get($theme-colors, "green");
+$headings-font-weight:          map-get($font-weights, "regular");
+
+$h1-font-size:                  map-get($font-sizes, 64);
+$h2-font-size:                  map-get($font-sizes, 40);
+$h3-font-size:                  map-get($font-sizes, 24);
+
+$body-color:                    map-get($theme-colors, "black-light");
+
+$btn-font-size:                 map-get($font-sizes, 13);
+$btn-border-radius:             0;
+$btn-font-weight:               map-get($font-weights, "semibold");
+$btn-focus-width:               0;
+$btn-border-width:              2px;
+$btn-padding-x:                 16px;
+$btn-padding-y:                 11px;
+$btn-line-height:               map-get($line-heights, 20);
+$btn-font-size-sm:              map-get($font-sizes, 11);
+$btn-border-radius-sm:          0;
+$btn-padding-x-sm:              16px;
+$btn-padding-y-sm:              13px;
+
+$btn-close-focus-shadow:        none;
+
+$nav-link-color:                map-get($theme-colors, "black");
+$nav-link-hover-color:          map-get($theme-colors, "green-light");
+$nav-link-font-size:            map-get($font-sizes, 13);
+$nav-link-font-weight:          map-get($font-weights, "semibold");
+$nav-link-padding-x:            0;
+$nav-link-padding-y:            0;
+
+$offcanvas-bg-color:            map-get($theme-colors, "white");
+$offcanvas-color:               map-get($theme-colors, "black-light");
+
+$modal-content-border-width:    0;
+$modal-content-border-radius:   0;
+$modal-content-bg:              map-get($theme-colors, "black-light");
+$modal-inner-padding:           map-get($spacers, 32);
+
+//$input-font-size:                   $font-size-base;
+//$input-border-color:                map-get($theme-colors, "white");
+//$input-border-radius:               2rem;
+//$input-padding-x:                   1.5rem;
+//$input-padding-y:                   1rem;
+//$input-focus-border-color:          map-get($theme-colors, "white");
+//$input-focus-box-shadow:            none;
+//$form-check-input-focus-box-shadow: none;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+$utilities:
+(
+    "font-size": (
+        property: font-size,
+        class: fs,
+        values: $font-sizes,
+        rfs: true,
+    ),
+    "font-size-static": (
+        property: font-size,
+        class: fss,
+        values: $font-sizes,
+    ),
+    "font-weight": (
+        property: font-weight,
+        class: fw,
+        values: $font-weights,
+    ),
+    "font-family": (
+        property: font-family,
+        class: ff,
+        values: (
+            "montserrat": $font-family-montserrat,
+            "lora": $font-family-lora,
+        ),
+    ),
+    "letter-spacing": (
+        property: letter-spacing,
+        class: ls,
+        values: $letter-spacings,
+    ),
+    "line-height": (
+        property: line-height,
+        class: lh,
+        values: $line-heights,
+        rfs: true,
+    ),
+    "line-height-static": (
+        property: line-height,
+        class: lhs,
+        values: $line-heights,
+    ),
+    "background-color-hover": (
+        property: background-color,
+        class: bg,
+        values: map-loop($theme-colors, rgba-css-var, "$key", "bg"),
+        local-vars: (
+            bg-opacity: 1,
+        ),
+        state: hover,
+    ),
+    "color-hover": (
+        property: color,
+        class: text,
+        values: $theme-colors,
+        state: hover,
+    ),
+    "height": (
+        property: height,
+        class: h,
+        values: (
+            25: 25%,
+            50: 50%,
+            75: 75%,
+            100: 100%,
+            auto: auto
+        ),
+        responsive: true,
+    ),
+    "width": (
+        property: width,
+        class: w,
+        values: (
+            25: 25%,
+            30: 30%,
+            35: 35%,
+            40: 40%,
+            45: 45%,
+            50: 50%,
+            58: 58%,
+            65: 65%,
+            70: 70%,
+            75: 75%,
+            80: 80%,
+            85: 85%,
+            90: 95%,
+            100: 100%,
+            auto: auto
+        ),
+        responsive: true,
+    ),
+    "object-fit": (
+        property: object-fit,
+        class: of,
+        values: (
+            cover: cover,
+            contain: contain,
+            none: none,
+        ),
+        responsive: true,
+    ),
+    "transition": (
+        property: transition,
+        class: transition,
+        values: (
+            null: all var(--bs-transition-duration) var(--bs-transition-function)
+        ),
+        local-vars: (
+            transition-property: all,
+            transition-duration: .2s,
+            transition-function: ease-in-out
+        ),
+    ),
+    "opacity": (
+        property: opacity,
+        values: (
+            0: 0,
+            25: .25,
+            50: .5,
+            65: .65,
+            75: .75,
+            100: 1,
+        ),
+    ),
+    "opacity-hover": (
+        property: opacity,
+        values: (
+            0: 0,
+            25: .25,
+            50: .5,
+            65: .65,
+            75: .75,
+            100: 1,
+        ),
+        state: hover,
+    ),
+);
+
+// 5. Include remainder of required parts
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/offcanvas";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/modal";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "~bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+:root {
+    @each $size, $value in $font-sizes {
+        --#{$prefix}font-size-#{$size}: #{$value};
+    }
+
+    @each $weight, $value in $font-weights {
+        --#{$prefix}font-weight-#{$weight}: #{$value};
+    }
+
+    @each $color, $value in $theme-colors {
+        --#{$prefix}#{$color}: #{$value};
+    }
+};

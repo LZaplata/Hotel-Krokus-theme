@@ -1,0 +1,19 @@
+<div class="swiper gallery-swiper">
+    <div class="swiper-wrapper">
+        {% for image in __SELF__.gallery.images %}
+            <div class="swiper-slide">
+                <a href="{{ image.path }}" title="{{ image.description }}" class="swiper-image position-relative d-flex">
+                    <img src="{{ image.path|resize(298, 222, { mode: 'crop' }) }}" alt="{{ image.title }}" class="img-fluid w-100">
+
+                    <span class="overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center transition">
+                        <img src="{{ 'assets/images/icons/zoom.svg'|theme }}" alt="zoom">
+                    </span>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="container-lg">
+        <div class="swiper-scrollbar position-relative start-0 end-0 w-100 bottom-0 mt-4"></div>
+    </div>
+</div>

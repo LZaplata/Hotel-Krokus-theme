@@ -1,0 +1,27 @@
+title = "Restaurace"
+layout = "default"
+url = "/restaurace"
+
+[collection banners]
+handle = "Restaurant\Banner"
+
+[section content]
+handle = "Restaurant\Content"
+==
+{% partial "banner/default" banners=banners %}
+
+<div class="container-fluid py-5" id="content">
+    <div class="container-lg py-xl-5">
+        <h{{ banners.getIterator().count > 0 ? 2 : 1}} class="text-center">
+            <span class="d-inline-block w-lg-70 w-xxl-65">
+                {{ content.heading }}
+            </span>
+        </h{{ banners.getIterator().count > 0 ? 2 : 1}}>
+
+        {% if content.text %}
+            <div class="text text-center fs-17 lh-30 mt-4">
+                {{ content.text|raw }}
+            </div>
+        {% endif %}
+    </div>
+</div>

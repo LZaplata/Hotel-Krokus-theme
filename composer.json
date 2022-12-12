@@ -1,0 +1,8 @@
+{
+    "name": "lzaplata/hotelkrokus-theme",
+    "type": "october-theme",
+    "description": "Theme for hotel Krokus from Pec pod Sn\u011b\u017ekou.",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

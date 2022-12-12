@@ -1,0 +1,76 @@
+<footer>
+    {% if footer.advantages_enabled and footer.advantages.count > 0 %}
+        {% partial ["advantages/", footer.advantages_layout]|join advantages=footer.advantages %}
+    {% endif %}
+
+    <div class="container-fluid bg-black-light text-white py-5 fs-14" id="footer">
+        <div class="container-lg pt-xl-4">
+            <div class="row row-cols-1 g-5 row-cols-sm-2 row-cols-lg-4">
+                <div class="col d-flex flex-column gap-4 order-0">
+                    {% if contact.company %}
+                        <p class="fs-16 fw-bold mb-0">
+                            HOTEL KROKUS ***
+                        </p>
+                    {% endif %}
+
+                    <p class="opacity-65 mb-0">
+                        {{ contact.street }} {{ contact.street_number }} <br>
+                        {{ contact.zip }}
+                    </p>
+
+                    {% if contact.map_link %}
+                        <p class="mb-0">
+                            <a href="{{ contact.map_link }}" target="_blank" class="text-white opacity-65-hover transition">
+                                Ukázat na mapě
+                            </a>
+                        </p>
+                    {% endif %}
+                </div>
+
+                <div class="col order-0 order-sm-1 order-lg-0">
+                    <p class="fs-16 fw-bold mb-0 text-uppercase mb-4 ls-2">
+                        menu
+                    </p>
+
+                    {% component "footermenu" %}
+                </div>
+
+                <div class="col order-0 order-sm-1 order-lg-0">
+                    <p class="fs-16 fw-bold mb-0 text-uppercase mb-4 ls-2">
+                        {{ "footer.links"|_ }}
+                    </p>
+
+                    {% component "links" %}
+                </div>
+
+                <div class="col order-0">
+                    <p class="fs-16 fw-bold mb-0 text-uppercase mb-4 ls-2">
+                        {{ "footer.follow_us"|_ }}
+                    </p>
+
+                    <p class="mb-0">
+                        {% if social_network.facebook %}
+                            <a href="{{ social_network.facebook }}" target="_blank" class="d-inline-block bg-white opacity-65-hover transition mi-facebook mi-40"></a>
+                        {% endif %}
+
+                        {% if social_network.instagram %}
+                            <a href="{{ social_network.instagram }}" target="_blank" class="d-inline-block bg-white opacity-65-hover transition mi-instagram mi-40"></a>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-lg pb-xl-4 mt-5">
+            <div class="row row-cols-1 row-cols-sm-2 d-flex align-items-center">
+                <div class="col text-start opacity-65">
+                    &copy; {{ "footer.copyright"|_ }}
+                </div>
+
+                <div class="col text-start mt-4 text-sm-end mt-sm-0">
+                    <a href="https://www.hucr.cz" target="_blank" class="d-inline-block bg-white opacity-65 opacity-100-hover transition mi-signature"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,23 @@
+{% for item in items %}
+    {% if not item.viewBag.isHidden %}
+        <li class="nav-item {{ item.viewBag.cssClass }}">
+            {% if item.url %}
+                <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link text-center fss-22 text-uppercase ls-05   {{ item.isActive ? 'active text-green' : '' }} {{ item.isChildActive ? 'active text-green' : '' }}">
+                    <span class="d-inline-flex">
+                        {{ item.title }}
+                    </span>
+                </a>
+            {% else %}
+                <span>{{ item.title }}</span>
+            {% endif %}
+        </li>
+    {% endif %}
+{% endfor %}
+
+{% if booking.link %}
+    <li class="nav-item text-center mt-3">
+        <a href="{{ booking.link }}" target="_blank" class="btn btn-green d-inline-flex align-items-center">
+            <img src="{{ 'assets/images/icons/bookmark.svg'|theme }}" alt="" class="me-1"> Rezervace
+        </a>
+    </li>
+{% endif %}

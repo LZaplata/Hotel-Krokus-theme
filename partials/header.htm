@@ -1,0 +1,80 @@
+<header>
+    <div class="top container-fluid position-relative">
+        <div class="container-lg d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-3 justify-content-between w-100 py-2 justify-content-sm-start py-sm-0 w-sm-auto">
+                {% if contact.email %}
+                    <a href="mailto:{{ contact.email }}" class="d-inline-flex align-items-center fs-12 text-black-light text-green-light-hover transition text-decoration-none">
+                        <img src="{{ 'assets/images/icons/envelope-open.svg'|theme }}" alt="email" class="me-1"> {{ contact.email }}
+                    </a>
+                {% endif %}
+
+                {% if contact.phone %}
+                    <a href="tel:{{ contact.phone }}" class="d-inline-flex align-items-center fs-12 text-black-light text-green-light-hover transition text-decoration-none">
+                        <img src="{{ 'assets/images/icons/phone-call.svg'|theme }}" alt="email" class="me-1"> {{ contact.phone }}
+                    </a>
+                {% endif %}
+            </div>
+
+            <div class="d-none d-sm-flex">
+                {% if sitepicker.isEnabled %}
+                    <div class="d-none me-3 sitepicker d-xxl-flex">
+                        <ul class="list-unstyled mb-0 d-flex align-items-center">
+                            <li class="position-relative d-flex">
+                                <img src="{{ ['assets/images/icons/lang-', this.site.code, '.svg']|join|theme }}" alt="{{ this.site.code }}">
+
+                                <img src="{{ 'assets/images/icons/caret-down.svg'|theme }}" alt="caret" class="ms-1">
+
+
+                                <div class="position-absolute top-100 transition">
+                                    <ul class="list-unstyled p-2 m-2 d-flex flex-column gap-2 bg-white">
+                                        {% for site in sitepicker.sites %}
+                                            <li>
+                                                <a href="{{ site.url }}" class="d-flex">
+                                                    <img src="{{ ['assets/images/icons/lang-', site.code, '.svg']|join|theme }}" alt="{{ site.code }}" class="transition">
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <div class="d-flex socials">
+                    {% if social_network.facebook %}
+                        <a href="{{ social_network.facebook }}" target="_blank" class="d-inline-block bg-black-light bg-green-light-hover transition mi-facebook"></a>
+                    {% endif %}
+
+                    {% if social_network.instagram %}
+                        <a href="{{ social_network.instagram }}" target="_blank" class="d-inline-block bg-black-light bg-green-light-hover transition mi-instagram"></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle container-fluid py-3 shadow-lg">
+        <div class="container-lg">
+            <div class="row row-cols-2 align-items-center row-cols-xxl-3">
+                <div class="col col-xxl-2">
+                    <a href="{{ 'homepage'|page }}" class="bg-green bg-green-light-hover transition mi-logo"></a>
+                </div>
+
+                <div class="col d-none d-xxl-flex col-xxl-8 justify-content-xxl-center">
+                    {% component "mainmenu" %}
+                </div>
+
+                <div class="col d-flex justify-content-end align-items-center col-xxl-2">
+                    <a href="#offcanvas" data-bs-toggle="offcanvas" class="bg-green mi-hamburger d-xxl-none"></a>
+
+                    {% if booking.link %}
+                        <a href="{{ booking.link }}" target="_blank" class="btn btn-green d-none align-items-center d-sm-inline-flex ms-sm-4">
+                            <img src="{{ 'assets/images/icons/bookmark.svg'|theme }}" alt="" class="me-1"> {{ "button.booking"|_ }}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
