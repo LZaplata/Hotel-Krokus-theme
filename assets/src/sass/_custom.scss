@@ -16,6 +16,9 @@ $theme-colors: (
     "gray":                     #e1dbd6,    // rgb(225, 219, 214)
     "gray-300":                 #f3f3ee,
     "gray-500":                 #f5f0ec,
+    "red":                      #de0909,
+    "red-light":                #ffefef,
+    "yellow":                   #ffd1a6,
 );
 
 $font-sizes: (
@@ -40,6 +43,7 @@ $font-weights: (
 );
 
 $letter-spacings: (
+    "n02":                      -.2px,
     "05":                       .5px,
     2:                          2px,
     3:                          3px,
@@ -48,6 +52,7 @@ $letter-spacings: (
 $line-heights: (
     20:                         1.25rem,
     24:                         1.5rem,
+    26:                         1.625rem,
     30:                         1.875rem,
     34:                         2.125rem,
     36:                         2.25rem,
@@ -118,14 +123,24 @@ $modal-content-border-radius:   0;
 $modal-content-bg:              map-get($theme-colors, "black-light");
 $modal-inner-padding:           map-get($spacers, 32);
 
-//$input-font-size:                   $font-size-base;
-//$input-border-color:                map-get($theme-colors, "white");
-//$input-border-radius:               2rem;
-//$input-padding-x:                   1.5rem;
-//$input-padding-y:                   1rem;
-//$input-focus-border-color:          map-get($theme-colors, "white");
-//$input-focus-box-shadow:            none;
-//$form-check-input-focus-box-shadow: none;
+$form-label-font-size:          map-get($font-sizes, 13);
+$form-label-color:              map-get($theme-colors, "black-light");
+$form-label-font-weight:        map-get($font-weights, "medium");
+$form-feedback-font-size:       map-get($font-sizes, 11);
+$form-feedback-invalid-color:   map-get($theme-colors, "red");
+$form-feedback-valid-color:     map-get($theme-colors, "green");
+$form-feedback-icon-invalid:    url("../images/icons/x-circle.svg");
+$form-feedback-icon-valid:      url("../images/icons/check-circle.svg");
+$form-feedback-margin-top:      .5rem;
+$form-check-input-focus-box-shadow: none;
+
+$input-font-size:                   map-get($font-sizes, 15);
+$input-border-color:                rgba(0, 0, 0, .35);
+$input-border-radius:               0;
+$input-padding-x:                   15px;
+$input-padding-y:                   12px;
+$input-focus-border-color:          $input-border-color;
+$input-focus-box-shadow:            none;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";

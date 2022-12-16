@@ -9,3 +9,18 @@ footer.copyright: "Všechna práva vyhrazena"
 rooms.choose_room: "Vybrat pokoj"
 rooms.book_room: "Rezervovat pokoj"
 rooms.equipment.show_all: "Zobrazit vše"
+
+wellness.book: "Rezervovat"
+wellness.book_your_activity: "Zarezervujte si svou aktivitu"
+
+bonus.contact_us: "Kontaktujte nás pro váš bonus"
+
+pec.winter.heading: "V zimě"
+pec.summer.heading: "V létě"
+
+contact.operator.heading: "Provozovatel"
+contact.operator.ico: "IČO"
+contact.operator.file_number: "Spisová značka"
+contact.executive.heading: "Jednatel"
+contact.button.booking: "Chci rezervovat"
+contact.button.gdpr: "Zásady ochrany osobních údajů"

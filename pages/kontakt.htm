@@ -1,0 +1,142 @@
+url = "/kontakt"
+layout = "default"
+title = "Kontakt"
+
+[collection banners]
+handle = "Contact\Banner"
+
+[section content]
+handle = "Contact\Content"
+==
+{% partial "banner/default" banners=banners %}
+
+<div class="container-fluid py-5 pb-3" id="content">
+    <div class="container-lg">
+        <h{{ banners.getIterator().count > 0 ? 2 : 1}} class="text-center">
+            <span class="d-inline-block w-lg-70 w-xxl-65">
+                {{ content.heading }}
+            </span>
+        </h{{ banners.getIterator().count > 0 ? 2 : 1}}>
+
+        {% if content.text %}
+            <div class="text text-center fs-17 lh-30 mt-4">
+                {{ content.text|raw }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if content.quick_contact_enabled %}
+    {% partial "contact/sm" %}
+{% endif %}
+
+<div class="container-fluid pb-5 pt-4" id="contact">
+    <div class="container-lg pb-xl-5">
+        <div class="border-1 border-top border-gray pt-5">
+            <div class="row row-cols-1 g-5 row-cols-sm-2 row-cols-lg-3">
+                <div class="col d-flex flex-column gap-3">
+                    <h2 class="h3">
+                        {{ contact.company }}
+                    </h2>
+
+                    <p class="mb-0">
+                        {{ contact.street }} {{ contact.street_number }} <br>
+                        {{ contact.zip }} {{ contact.city }}
+                    </p>
+
+                    {% if contact.map_link %}
+                        <p class="mb-0">
+                            <a href="{{ contact.map_link }}" target="_blank">
+                                Ukázat na mapě
+                            </a>
+                        </p>
+                    {% endif %}
+                </div>
+
+                <div class="col d-flex flex-column gap-3 order-sm-1 order-lg-0 ">
+                    <h2 class="h3">
+                        {{ "contact.operator.heading"|_ }}
+                    </h2>
+
+                    <p class="mb-0">
+                        {{ contact.operator_company }} <br>
+                        {{ contact.operator_street }} {{ contact.operator_street_number }} <br>
+                        {{ contact.operator_zip }} {{ contact.operator_city }}
+                    </p>
+
+                    {% if contact.operator_ico %}
+                        <p class="mb-0">
+                            <span class="fw-semibold">{{ "contact.operator.ico"|_ }}:</span>
+
+                            {{ contact.operator_ico }}
+                        </p>
+                    {% endif %}
+
+                    {% if contact.operator_file_number %}
+                        <p class="mb-0">
+                            <span class="fw-semibold">{{ "contact.operator.file_number"|_ }}:</span><br>
+
+                            {{ contact.operator_file_number }}
+                        </p>
+                    {% endif %}
+                </div>
+
+                <div class="col d-flex flex-column gap-3 order-sm-0 order-lg-1">
+                    <h2 class="h3">
+                        {{ "contact.executive.heading"|_ }}
+                    </h2>
+
+                    <p class="mb-0">
+                        <span class="fw-semibold">
+                            {{ contact.executive_name }} {{ contact.executive_surname }}
+                        </span><br>
+
+                        {% if contact.executive_phone %}
+                            <span class="fw-semibold">T:</span>
+
+                            <a href="tel:{{ contact.executive_phone }}">
+                                {{ contact.executive_phone }}
+                            </a><br>
+                        {% endif %}
+
+                        {% if contact.executive_email %}
+                            <span class="fw-semibold">E:</span>
+
+                            <a href="tel:{{ contact.executive_email }}">
+                                {{ contact.executive_email }}
+                            </a>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+                {% if contact.gdpr_file %}
+                    <div class="col">
+                        <a href="{{ contact.gdpr_file }}" target="_blank" class="btn btn-outline-white w-100 h-100 d-flex align-items-center justify-content-center">
+                            {{ "contact.button.gdpr"|_ }}
+                        </a>
+                    </div>
+                {% endif %}
+
+                {% if booking.link %}
+                    <div class="col">
+                        <a href="{{ booking.link }}" target="_blank" class="btn btn-green align-items-center d-inline-flex w-100 justify-content-center">
+                            <img src="{{ 'assets/images/icons/bookmark.svg'|theme }}" alt="" class="me-1"> {{ "contact.button.booking"|_ }}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if contact.map_code %}
+    <div class="container-fluid pb-5 px-0 px-md-40" id="map">
+        <div class="pb-xl-5">
+            <div class="ratio ratio-16x9">
+                {{ contact.map_code|raw }}
+            </div>
+        </div>
+    </div>
+{% endif %}

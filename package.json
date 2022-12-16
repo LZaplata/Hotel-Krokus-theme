@@ -12,6 +12,7 @@
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.1",
     "lightgallery": "^2.7.0",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "flatpickr": "^4.6.13"
   }
 }

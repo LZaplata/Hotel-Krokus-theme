@@ -1,8 +1,8 @@
-<div class="row row-cols-1 g-4 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+<div class="row row-cols-1 row-cols-md-2 g-5">
     {% for image in __SELF__.gallery.images %}
         <div class="col">
-            <a href="{{ image.path }}" title="{{ image.description }}" class="gallery-image position-relative d-flex">
-                <img src="{{ image.path|resize(298, 222, { mode: 'crop' }) }}" alt="{{ image.title }}" class="img-fluid w-100">
+            <a href="{{ image.path }}" title="{{ image.description }}" class="menu-image position-relative d-flex shadow-lg">
+                <img src="{{ image.path|resize(600, 850, { mode: 'crop' }) }}" alt="{{ image.title }}" class="img-fluid w-100">
 
                 <span class="overlay position-absolute start-0 top-0 w-100 h-100 d-flex align-items-center justify-content-center transition">
                     <img src="{{ 'assets/images/icons/zoom.svg'|theme }}" alt="zoom">

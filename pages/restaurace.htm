@@ -1,12 +1,27 @@
-title = "Restaurace"
-layout = "default"
 url = "/restaurace"
+layout = "default"
+title = "Restaurace"
 
 [collection banners]
 handle = "Restaurant\Banner"
 
 [section content]
 handle = "Restaurant\Content"
+
+[Gallery menu]
+gallery = "menu"
+
+[Gallery galleryswiper]
+==
+<?php
+    use LZaplata\Gallery\Models\Gallery;
+
+    function onStart() {
+        $gallery = Gallery::find($this["content"]["gallery"] ?? null);
+
+        $this["gallerySlug"] = $gallery->slug;
+}
+?>
 ==
 {% partial "banner/default" banners=banners %}
 
@@ -25,3 +40,35 @@ handle = "Restaurant\Content"
         {% endif %}
     </div>
 </div>
+
+{% partial "chessboard/default" chessboard=content.chessboard odd_bg=true %}
+
+{% if content.menu_enabled and content.menu %}
+    <div class="container-fluid py-5 bg-gray-100" id="menu">
+        <div class="container-lg py-xl-5">
+            <h2 class="text-center mb-5">
+                Menu
+            </h2>
+
+            {% component "menu" %}
+        </div>
+    </div>
+{% endif %}
+
+{% if content.advantages_enabled and content.advantages.count > 0 %}
+    {% partial ["advantages/", content.advantages_layout]|join advantages=content.advantages columns=content.custom_layout_columns %}
+{% endif %}
+
+{% if content.gallery_enabled and content.gallery %}
+    <div class="container-fluid py-5" id="gallery">
+        <div class="py-xl-5">
+            {% component "galleryswiper" gallery=gallerySlug %}
+
+            <div class="mt-4 text-center">
+                <a href="{{ 'galerie'|page }}" class="btn btn-outline-white">
+                    {{ "button.whole_gallery"|_ }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endif %}

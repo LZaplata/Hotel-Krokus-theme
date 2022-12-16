@@ -1,0 +1,33 @@
+<div class="container-fluid py-4 py-lg-5" id="contact-block">
+    <div class="container-lg">
+        <div class="row row-cols-1 g-4 row-cols-md-2 col-xl-10 offset-xl-1 col-xxl-8 offset-xxl-2">
+            {% if contact.phone %}
+                <div class="col d-flex align-items-center justify-content-md-center">
+                    <span class="icon d-inline-flex align-items-center justify-content-center">
+                        <img src="{{ 'assets/images/icons/phone-incoming.svg'|theme }}" alt="phone">
+                    </span>
+
+                    <span class="fs-24 ff-lora ms-3">
+                        <a href="tel:{{ contact.phone }}" class="text-decoration-none">
+                            {{ contact.phone }}
+                        </a>
+                    </span>
+                </div>
+            {% endif %}
+
+            {% if contact.email %}
+                <div class="col d-flex align-items-center justify-content-md-center">
+                    <span class="icon d-inline-flex align-items-center justify-content-center">
+                        <img src="{{ 'assets/images/icons/envelope-open-lg.svg'|theme }}" alt="phone">
+                    </span>
+
+                    <span class="fs-24 ff-lora ms-3">
+                        <a href="mailto:{{ contact.email }}" class="text-decoration-none">
+                            {{ contact.email }}
+                        </a>
+                    </span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

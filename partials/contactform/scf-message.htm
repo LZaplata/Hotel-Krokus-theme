@@ -1,0 +1,28 @@
+
+{% if formSentAlias == __SELF__.alias %}
+
+	{% if formSuccess %}
+
+		{{ __SELF__.getGaSuccessEventHtmlCode(true)|raw }}
+
+		{% flash success %}
+
+            <p class="text-red fs-18">
+                {{ html_entity_decode(message)|nl2br }}
+            </p>
+
+		{% endflash %}
+
+	{% elseif formError %}
+
+{#		{% flash error %}#}
+
+{#			<div class="alert alert-{{ type == 'error' ? 'danger' : type }}">#}
+{#				{{ html_entity_decode(message)|nl2br }}#}
+{#			</div>#}
+
+{#		{% endflash %}#}
+
+	{% endif %}
+
+{% endif %}

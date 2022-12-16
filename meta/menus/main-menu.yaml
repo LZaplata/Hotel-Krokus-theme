@@ -33,9 +33,13 @@ items:
                     title: Rooms
     -
         title: Restaurace
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: restaurace
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -47,10 +51,10 @@ items:
     -
         title: Wellness
         nesting: null
-        type: url
-        url: /
+        type: cms-page
+        url: null
         code: ''
-        reference: null
+        reference: wellness
         cmsPage: null
         replace: null
         viewBag:
@@ -64,10 +68,10 @@ items:
     -
         title: Galerie
         nesting: null
-        type: url
-        url: /
+        type: cms-page
+        url: null
         code: ''
-        reference: null
+        reference: galerie
         cmsPage: null
         replace: null
         viewBag:
@@ -81,10 +85,10 @@ items:
     -
         title: Bonus
         nesting: null
-        type: url
-        url: /
+        type: cms-page
+        url: null
         code: ''
-        reference: null
+        reference: bonus
         cmsPage: null
         replace: null
         viewBag:
@@ -97,13 +101,9 @@ items:
                     url: /
     -
         title: Kontakt
-        nesting: null
-        type: url
-        url: /
+        type: cms-page
         code: ''
-        reference: null
-        cmsPage: null
-        replace: null
+        reference: kontakt
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -115,10 +115,10 @@ items:
     -
         title: 'V Peci'
         nesting: null
-        type: url
-        url: /
+        type: cms-page
+        url: null
         code: ''
-        reference: null
+        reference: v-peci
         cmsPage: null
         replace: null
         viewBag:

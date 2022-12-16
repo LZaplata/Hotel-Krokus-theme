@@ -1,0 +1,57 @@
+{% if chessboard.count > 0 %}
+    <div id="chessboard">
+        {% for row in chessboard %}
+            {% if loop.index is odd %}
+                {% set bg_class = odd_bg ? "bg-gray-100" : "" %}
+            {% else %}
+                {% set bg_class = odd_bg ? "" : "bg-gray-100" %}
+            {% endif %}
+
+            <div class="container-fluid py-5 {{ bg_class }}">
+                <div class="container-lg py-xl-5">
+                    <div class="row row-cols-1 row-cols-md-2 g-md-5 g-xl-100">
+                        <div class="col order-2 mt-4 mt-md-5 mt-xl-100 {% if loop.index is odd %}order-md-1{% endif %} d-md-flex align-items-md-center">
+                            <div>
+                                <p class="h2 mb-3 mb-xl-4">
+                                    {{ row.heading }}
+                                </p>
+
+                                {% if row.content %}
+                                    <div class="content">
+                                        {{ row.content|raw }}
+                                    </div>
+                                {% endif %}
+
+                                {% if row.buttons.count > 0 or row.booking_button %}
+                                    <div class="mt-4 d-flex gap-2">
+                                        {% for button in row.buttons %}
+                                            <a href="{{ button.link }}" class="btn btn-outline-white btn-sm">
+                                                {{ button.label }}
+                                            </a>
+                                        {% endfor %}
+
+                                        {% if row.booking_button %}
+                                            <a href="{{ booking.link }}">
+                                                <a href="{{ booking.link }}" target="_blank" class="btn btn-green align-items-center d-inline-flex">
+                                                    <img src="{{ 'assets/images/icons/bookmark.svg'|theme }}" alt="" class="me-1"> {{ "button.booking"|_ }}
+                                                </a>
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col order-1 {% if loop.index is odd %}order-md-2{% endif %}">
+                            {% if row.image %}
+                                <p class="mb-0 h-md-100 img position-relative {% if loop.index is even %}left{% endif %}">
+                                    <img src="{{ row.image.path }}" alt="{{ row.image.description }}" class="img-fluid h-md-100 of-md-cover">
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

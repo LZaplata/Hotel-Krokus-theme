@@ -1,0 +1,120 @@
+url = "/wellness"
+layout = "default"
+title = "Wellness"
+
+[collection banners]
+handle = "Wellness\Banner"
+
+[section content]
+handle = "Wellness\Content"
+
+[contactForm contactform]
+disable_fields = "value|validate_from|validate_to"
+
+[Gallery galleryswiper]
+==
+<?php
+use LZaplata\Gallery\Models\Gallery;
+
+    function onStart() {
+        $gallery = Gallery::find($this["content"]["gallery"] ?? null);
+
+        $this["gallerySlug"] = $gallery->slug;
+    }
+?>
+==
+{% partial "banner/default" banners=banners %}
+
+<div class="container-fluid py-5" id="content">
+    <div class="container-lg py-xl-5">
+        <h{{ banners.getIterator().count > 0 ? 2 : 1}} class="text-center">
+            <span class="d-inline-block w-lg-70 w-xxl-65">
+                {{ content.heading }}
+            </span>
+        </h{{ banners.getIterator().count > 0 ? 2 : 1}}>
+
+        {% if content.text %}
+            <div class="text text-center fs-17 lh-30 mt-4">
+                {{ content.text|raw }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if content.form_enabled %}
+    <div class="container-fluid px-0 px-md-40 pb-5" id="separator">
+        <p class="text-center fs-11 ls-3 text-uppercase mb-2 fw-semibold">
+            {{ "wellness.book"|_ }}
+        </p>
+
+        <div class="text-center position-relative">
+            <span class="d-inline-flex align-items-center justify-content-center border border-1 border-gray rounded-circle bg-white position-relative">
+                <img src="{{ 'assets/images/icons/arrow-down.svg'|theme }}" alt="arrow" class="of-none">
+            </span>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5 mt-xl-5 bg-gray-100" id="wellness-form">
+        <div class="container-lg py-xl-5">
+            <h2 class="text-center mb-5">
+                {{ "wellness.book_your_activity"|_ }}
+            </h2>
+
+            <div class="col-xl-10 offset-xl-1 col-xxl-8 offset-xxl-2">
+                {% component "contactform" %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if content.sauna_enabled %}
+    <div class="container-fluid py-5" id="sauna">
+        <div class="container-lg py-xl-5">
+            <h2 class="text-center mb-5">
+                {{ content.sauna_heading }}
+            </h2>
+
+            <div class="row row-cols-1 row-cols-md-2 g-5 g-lg-100 col-xl-10 offset-xl-1">
+                {% if content.sauna_advantages.count > 0 %}
+                    <div class="col d-flex flex-column gap-3">
+                        {% for advantage in content.sauna_advantages %}
+                            <p class="mb-0 d-flex align-items-start align-items-sm-center">
+                                <img src="{{ advantage.icon.thumb(32, 32, {"mode": "crop"}) }}" alt="{{ advantage.icon.description }}">
+
+                                <span class="ms-3">
+                                    {{ advantage.description }}
+                                </span>
+                            </p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% if content.sauna_text %}
+                    <div class="text col mt-4 mt-md-5 mt-lg-100">
+                        <div class="pt-4 border-1 border-top border-gray fw-semibold ls-n02 pt-md-0 ps-xxl-5">
+                            {{ content.sauna_text|raw }}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if content.contact_enabled %}
+    {% partial "contact/sm" %}
+{% endif %}
+
+{% if content.gallery_enabled and content.gallery %}
+    <div class="container-fluid py-5" id="gallery">
+        <div class="py-xl-5">
+            {% component "galleryswiper" gallery=gallerySlug %}
+
+            <div class="mt-4 text-center">
+                <a href="{{ 'galerie'|page }}" class="btn btn-outline-white">
+                    {{ "button.whole_gallery"|_ }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endif %}

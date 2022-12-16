@@ -1,0 +1,35 @@
+<div class="container-fluid py-5">
+    <div class="container-lg py-xl-5">
+        <div class="border border-2 border-gray-300 p-4">
+            <div class="border border-1 border-gray p-4 border-dashed p-md-40">
+                <div class="advantages advantages-lg row row-cols-1 g-5 row-cols-md-2">
+                    {% for advantage in advantages %}
+                        <div class="advantage col position-relative">
+                            <div class="d-flex flex-column gap-3 align-items-center p-md-4">
+                                {% if advantage.icon and "icon" in columns %}
+                                    <p class="icon mb-0 text-center">
+                                        <span class="d-inline-flex align-items-center justify-content-center">
+                                            <img src="{{ advantage.icon.thumb(32, 32, {"mode": "crop"}) }}" alt="{{ advantage.icon.description }}">
+                                        </span>
+                                    </p>
+                                {% endif %}
+
+                                {% if "title" in columns %}
+                                    <p class="text-center fs-24 ff-lora lh-36">
+                                        {{ advantage.title }}
+                                    </p>
+                                {% endif %}
+
+                                {% if advantage.text and "text" in columns %}
+                                    <div class="text text-center fs-24 lh-36 w-sm-75 w-md-100 w-xl-75 ff-lora text-green mt-n32">
+                                        {{ advantage.text|raw }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+url = "/v-peci"
+layout = "default"
+title = "V Peci"
+
+[collection banners]
+handle = "Pec\Banner"
+
+[section content]
+handle = "Pec\Content"
+
+[Gallery galleryswiper]
+==
+<?php
+    use LZaplata\Gallery\Models\Gallery;
+
+    function onStart() {
+        $gallery = Gallery::find($this["content"]["gallery"] ?? null);
+
+        if ($gallery) {
+            $this["gallerySlug"] = $gallery->slug;
+        }
+}
+?>
+==
+{% partial "banner/default" banners=banners %}
+
+<div class="container-fluid py-5" id="content">
+    <div class="container-lg py-xl-5">
+        {% if content.heading %}
+            <h{{ banners.getIterator().count > 0 ? 2 : 1}} class="text-center">
+                <span class="d-inline-block w-lg-70 w-xxl-65">
+                    {{ content.heading }}
+                </span>
+            </h{{ banners.getIterator().count > 0 ? 2 : 1}}>
+        {% endif %}
+
+        {% if content.text %}
+            <div class="text text-center fs-17 lh-30 {{ content.heading ? 'mt-4' }}">
+                {{ content.text|raw }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container-fluid pb-5" id="activities">
+    <div class="container-lg pb-xl-5">
+        <div class="row row-cols-1 g-4 row-cols-md-2 row-cols-lg-3">
+            {% if content.winter_enabled and content.winter %}
+                <div class="col">
+                    <div class="border-2 border border-gray-300 p-4">
+                        <div class="border border-1 border-gray border-dashed p-4">
+                            <h2 class="mb-3">
+                                {{ "pec.winter.heading"|_ }}
+                            </h2>
+
+                            {% if content.winter %}
+                                <div class="text">
+                                    {{ content.winter|raw }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if content.summer_enabled and content.summer %}
+                <div class="col">
+                    <div class="border-2 border border-gray-300 p-4">
+                        <div class="border border-1 border-gray border-dashed p-4">
+                            <h2 class="mb-3">
+                                {{ "pec.summer.heading"|_ }}
+                            </h2>
+
+                            {% if content.summer %}
+                                <div class="text">
+                                    {{ content.summer|raw }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="col">
+                <div>
+
+                </div>
+            </div>
+        </div>
+
+        {% if content.button_enabled %}
+            <p class="mb-0 mt-5 pt-xl-4">
+                <a href="{{ content.button_link }}" target="_blank" class="btn btn-green w-100">
+                    {{ content.button_label }}
+                </a>
+            </p>
+        {% endif %}
+    </div>
+</div>
+
+{% if content.gallery_enabled and content.gallery %}
+    <div class="container-fluid py-5" id="gallery">
+        <div class="py-xl-5">
+            {% component "galleryswiper" gallery=gallerySlug %}
+
+            <div class="mt-4 text-center">
+                <a href="{{ 'galerie'|page }}" class="btn btn-outline-white">
+                    {{ "button.whole_gallery"|_ }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endif %}

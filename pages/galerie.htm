@@ -1,0 +1,16 @@
+url = "/galerie"
+layout = "default"
+title = "Galerie"
+
+[Gallery gallery]
+gallery = "obecna"
+==
+<div class="container-fluid py-5" id="gallery">
+    <div class="container-lg py-xl-5">
+        <h1 class="text-center mb-5">
+            {{ this.page.title }}
+        </h1>
+
+        {% component "gallery" %}
+    </div>
+</div>

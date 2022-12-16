@@ -11,5 +11,6 @@ require:
     - rainlab.pages
     - rainlab.translate
     - lzaplata.gallery
+    - martin.forms
 translate:
     cs: lang/cs.yaml

@@ -1,0 +1,81 @@
+url = "/bonus"
+layout = "default"
+title = "Bonus"
+
+[collection banners]
+handle = "Bonus\Banner"
+
+[section content]
+handle = "Bonus\Content"
+
+[contactForm contactform]
+disable_fields = "date|time_from|time_to|note"
+send_btn_label = "Odeslat formulář"
+
+[Gallery galleryswiper]
+==
+<?php
+use LZaplata\Gallery\Models\Gallery;
+
+    function onStart() {
+        $gallery = Gallery::find($this["content"]["gallery"] ?? null);
+
+        $this["gallerySlug"] = $gallery->slug;
+    }
+?>
+==
+{% partial "banner/default" banners=banners %}
+
+{% if content.advantages_enabled %}
+    <div class="container-fluid pt-5" id="advantages">
+        <div class="container-lg pt-xl-5">
+            <div class="row row-cols-1 gy-3 row-cols-md-2 col-xl-10 offset-xl-1">
+                {% if content.advantages.count > 0 %}
+                    {% for advantage in content.advantages %}
+                        <div class="col">
+                            <p class="mb-0 d-flex align-items-start">
+                                <img src="{{ advantage.icon.thumb(32, 32, {"mode": "crop"}) }}" alt="{{ advantage.icon.description }}">
+
+                                <span class="ms-3">
+                                    {{ advantage.description }}
+                                </span>
+                            </p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if content.form_enabled %}
+    <div class="container-fluid py-5" id="bonus-form">
+        <div class="container-lg py-xl-5">
+            <h2 class="text-center mb-5">
+                {{ "bonus.contact_us"|_ }}
+            </h2>
+
+            <div class="col-xl-10 offset-xl-1 col-xxl-8 offset-xxl-2">
+                {% component "contactform" %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if content.contact_enabled %}
+    {% partial "contact/sm" %}
+{% endif %}
+
+{% if content.gallery_enabled and content.gallery %}
+    <div class="container-fluid py-5" id="gallery">
+        <div class="py-xl-5">
+            {% component "galleryswiper" gallery=gallerySlug %}
+
+            <div class="mt-4 text-center">
+                <a href="{{ 'galerie'|page }}" class="btn btn-outline-white">
+                    {{ "button.whole_gallery"|_ }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endif %}
