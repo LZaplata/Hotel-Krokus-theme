@@ -36,6 +36,13 @@ lightGallery(document.getElementById("rooms"), {
     speed: 500,
 });
 
+var bannerSwiper = new Swiper(".banner-swiper", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
 var roomGallerySwiper = new Swiper(".room-gallery-swiper", {
     navigation: {
         nextEl: ".swiper-button-next",
