@@ -11,6 +11,6 @@ require:
     - rainlab.pages
     - rainlab.translate
     - lzaplata.gallery
-    - martin.forms
+    - janvince.smallcontactform
 translate:
     cs: lang/cs.yaml
