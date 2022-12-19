@@ -141,10 +141,13 @@ header
             .swiper-slide
                 img
                     object-fit: cover
-                    height: 650px
+                    height: 500px
 
                     @include media-breakpoint-down(md)
                         height: 400px
+
+                    @include media-breakpoint-up(xl)
+                        height: 650px
 
                 .gradient
                     background: linear-gradient(180deg, transparent 0%, var(--bs-black-light) 100%)
