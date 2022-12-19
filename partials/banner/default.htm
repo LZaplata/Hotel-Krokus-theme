@@ -6,7 +6,7 @@
                     {% for banner in banners %}
                         <div class="swiper-slide position-relative">
                             {% if banner.image %}
-                                <img src="{{ banner.image.path }}" alt="{{ banner.image.description }}" class="img-fluid">
+                                <img src="{{ banner.image.path }}" alt="{{ banner.image.description }}" class="w-100">
 
                                 <div class="position-absolute w-100 h-100 start-0 top-0 gradient"></div>
                             {% endif %}
