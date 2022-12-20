@@ -113,7 +113,7 @@ handle = "Contact\Content"
             <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
                 {% if contact.gdpr_file %}
                     <div class="col">
-                        <a href="{{ contact.gdpr_file }}" target="_blank" class="btn btn-outline-white w-100 h-100 d-flex align-items-center justify-content-center">
+                        <a href="{{ contact.gdpr_file.path }}" target="_blank" class="btn btn-outline-white w-100 h-100 d-flex align-items-center justify-content-center">
                             {{ "contact.button.gdpr"|_ }}
                         </a>
                     </div>
