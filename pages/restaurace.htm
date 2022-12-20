@@ -9,7 +9,6 @@ handle = "Restaurant\Banner"
 handle = "Restaurant\Content"
 
 [Gallery menu]
-gallery = "menu"
 
 [Gallery galleryswiper]
 ==
@@ -43,14 +42,14 @@ gallery = "menu"
 
 {% partial "chessboard/default" chessboard=content.chessboard odd_bg=true %}
 
-{% if content.menu_enabled and content.menu %}
+{% if content.menu_enabled %}
     <div class="container-fluid py-5 bg-gray-100" id="menu">
         <div class="container-lg py-xl-5">
             <h2 class="text-center mb-5">
                 Menu
             </h2>
 
-            {% component "menu" %}
+            {% component "menu" gallery=["menu-", this.site.code]|join %}
         </div>
     </div>
 {% endif %}
