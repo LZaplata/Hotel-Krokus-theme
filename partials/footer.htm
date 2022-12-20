@@ -7,24 +7,31 @@
         <div class="container-lg pt-xl-4">
             <div class="row row-cols-1 g-5 row-cols-sm-2 row-cols-lg-4">
                 <div class="col d-flex flex-column gap-4 order-0">
-                    {% if contact.company %}
-                        <p class="fs-16 fw-bold mb-0">
-                            HOTEL KROKUS ***
-                        </p>
-                    {% endif %}
-
-                    <p class="opacity-65 mb-0">
-                        {{ contact.street }} {{ contact.street_number }} <br>
-                        {{ contact.zip }}
+                    <p class="fs-16 fw-bold mb-0 text-uppercase">
+                        {{ "contact.operator.heading"|_ }}
                     </p>
 
-                    {% if contact.map_link %}
-                        <p class="mb-0">
-                            <a href="{{ contact.map_link }}" target="_blank" class="text-white opacity-65-hover transition">
-                                Ukázat na mapě
-                            </a>
+                    <p class="opacity-65 mb-0">
+                        {{ contact.operator_company }} <br>
+                        {{ contact.operator_street }} {{ contact.operator_street_number }} <br>
+                        {{ contact.operator_zip }} {{ contact.operator_city }}
+                    </p>
+
+                    {% if contact.operator_ico %}
+                        <p class="opacity-65 mb-0">
+                            <span class="fw-semibold">{{ "contact.operator.ico"|_ }}:</span>
+
+                            {{ contact.operator_ico }}
                         </p>
                     {% endif %}
+
+{#                    {% if contact.map_link %}#}
+{#                        <p class="mb-0">#}
+{#                            <a href="{{ contact.map_link }}" target="_blank" class="text-white opacity-65-hover transition">#}
+{#                                Ukázat na mapě#}
+{#                            </a>#}
+{#                        </p>#}
+{#                    {% endif %}#}
                 </div>
 
                 <div class="col order-0 order-sm-1 order-lg-0">
@@ -40,7 +47,15 @@
                         {{ "footer.links"|_ }}
                     </p>
 
-                    {% component "links" %}
+                    <ul class="nav flex-column gap-2">
+                        {% if contact.gdpr_file %}
+                            <li class="nav-item">
+                                <a href="{{ contact.gdpr_file.path }}" class="nav-link fs-14 text-white opacity-65 opacity-100-hover fw-regular transition d-inline-block">
+                                    {{ "footer.gdpr"|_ }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
                 </div>
 
                 <div class="col order-0">
