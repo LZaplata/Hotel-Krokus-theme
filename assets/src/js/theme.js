@@ -41,6 +41,9 @@ var bannerSwiper = new Swiper(".banner-swiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    autoplay: {
+        delay: 7000,
+    },
 });
 
 var roomGallerySwiper = new Swiper(".room-gallery-swiper", {

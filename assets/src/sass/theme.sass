@@ -153,6 +153,25 @@ header
                     background: linear-gradient(180deg, transparent 0%, var(--bs-black-light) 100%)
                     opacity: .55
 
+        .swiper-button-prev, .swiper-button-next
+            width: 48px
+            height: 48px
+            background: rgba(var(--bs-white-rgb), .15) !important
+            left: 50px
+
+            &:hover
+                background: rgba(var(--bs-white-rgb), .4) !important
+
+            &:after
+                content: none
+
+            &.swiper-button-disabled
+                opacity: 1
+
+        .swiper-button-next
+            left: auto
+            right: 50px
+
 #chessboard
     .row
         .content
