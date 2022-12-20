@@ -1,7 +1,7 @@
 <header>
     <div class="top container-fluid position-relative">
         <div class="container-lg d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-3 justify-content-between w-100 py-2 justify-content-sm-start py-sm-0 w-sm-auto">
+            <div class="d-flex gap-3 justify-content-between w-100 py-2 justify-content-sm-start w-sm-auto">
                 {% if contact.email %}
                     <a href="mailto:{{ contact.email }}" class="d-inline-flex align-items-center fs-12 text-black-light text-green-light-hover transition text-decoration-none">
                         <img src="{{ 'assets/images/icons/envelope-open.svg'|theme }}" alt="email" class="me-1"> {{ contact.email }}
