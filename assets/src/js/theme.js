@@ -110,6 +110,19 @@ flatpickr(".timepicker_to", {
     defaultDate: (today.getHours() + 1) + ":" + today.getMinutes(),
 });
 
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {toggleStickyClass()};
+
+var header = document.getElementById("header");
+var sticky = header.offsetTop;
+function toggleStickyClass() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}
+
 $(document).ready(function () {
     // $("#offcanvas .nav li a").click(function (event) {
     //     $("#offcanvas").removeClass("show");

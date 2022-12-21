@@ -67,6 +67,18 @@
     --bs-border-style: dashed
 
 header
+    &.sticky
+        position: fixed
+        top: 0
+        z-index: 1000
+        width: 100%
+
+        .top
+            background: rgba(var(--bs-gray-rgb), 1)
+
+        & + main
+            padding-top: 131px
+
     .top
         background: rgba(var(--bs-gray-rgb), .45)
         z-index: 1
