@@ -410,7 +410,7 @@ header
 
         &.was-validated
             .col
-                input
+                .form-control
                     &:valid, &:invalid
                         border-width: 2px !important
                         background-position: left calc(0.375em + 6px) center
@@ -423,6 +423,10 @@ header
                     &:invalid
                         color: var(--bs-red)
                         background-color: var(--bs-red-light)
+
+                textarea
+                    &:valid, &:invalid
+                        background-position: top calc(0.375em + 6px) left calc(0.375em + 6px) !important
 
 #sauna
     .text
