@@ -76,8 +76,14 @@ header
         .top
             background: rgba(var(--bs-gray-rgb), 1)
 
+        .bottom
+            opacity: 0 !important
+
         & + main
-            padding-top: 131px
+            padding-top: 216px
+
+            @include media-breakpoint-up(sm)
+                padding-top: 131px
 
     .top
         background: rgba(var(--bs-gray-rgb), .45)

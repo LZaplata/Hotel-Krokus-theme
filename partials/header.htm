@@ -77,4 +77,14 @@
             </div>
         </div>
     </div>
+
+    {% if booking.link %}
+        <div class="bottom container-fluid pt-4 pb-0 d-sm-none opacity-100 transition">
+            <div class="container-lg">
+                <a href="{{ booking.link }}" target="_blank" class="btn btn-green d-flex align-items-center justify-content-center">
+                    <img src="{{ 'assets/images/icons/bookmark.svg'|theme }}" alt="" class="me-1"> {{ "button.booking"|_ }}
+                </a>
+            </div>
+        </div>
+    {% endif %}
 </header>
