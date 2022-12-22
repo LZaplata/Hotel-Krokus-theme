@@ -1,0 +1,82 @@
+uuid: 14506957-5647-4536-b242-027742e57308
+handle: Homepage\Content
+type: single
+name: Obsah
+
+navigation:
+    parent: Homepage\Banner
+    label: Obsah
+    icon:  icon-columns
+    order: 20
+
+fields:
+    chessboard:
+        label: Šachovnicové obsahové bloky
+        type: repeater
+        itemsExpanded: false
+        form:
+            fields:
+                heading:
+                    label: Nadpis
+                    type: text
+                    span: left
+                    translatable: true
+                    validation: required
+                content:
+                    label: Obsah
+                    type: richeditor
+                    size: small
+                    translatable: true
+                _image:
+                    type: mixin
+                    source: Mixin\Image
+                buttons:
+                    label: Tlačítka
+                    type: repeater
+                    itemsExpanded: false
+                    form:
+                        fields:
+                            label:
+                                label: Text
+                                type: text
+                                span: left
+                                translatable: true
+                                validation: required
+                            link:
+                                label: Odkaz
+                                type: text
+                                span: right
+                                translatable: true
+                                validation: required
+                booking_button:
+                    label: Tlačítko "Rezervace"
+                    type: switch
+    _advantages:
+        type: mixin
+        source: Mixin\Advantages
+    booking_widget:
+        label: Zobrazit widget rezervací
+        type: switch
+        default: true
+    reviews_widget:
+        label: Zobrazit widget recenzí
+        type: switch
+        default: true
+    gallery_enabled:
+        label: Zobrazit galerii
+        type: switch
+        default: true
+        span: left
+    gallery:
+        label: Galerie
+        type: recordfinder
+        modelClass: LZaplata\Gallery\Models\Gallery
+        useRelation: false
+        span: right
+        list:
+            columns:
+                name: Název
+        trigger:
+            action: show
+            field: gallery_enabled
+            condition: checked

@@ -1,0 +1,20 @@
+uuid: deb817bd-b340-4fe1-aacc-7941b1f3580e
+handle: Contact\Content
+type: single
+name: Obsah
+
+navigation:
+    parent: Contact\Banner
+    label: Obsah
+    icon:  icon-columns
+    order: 20
+
+fields:
+    _content:
+        type: mixin
+        source: Mixin\Content
+    quick_contact_enabled:
+        label: Zobrazit rychlý telefon a email
+        type: switch
+        default: true
+        span: left

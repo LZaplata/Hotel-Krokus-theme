@@ -1,0 +1,31 @@
+uuid: e369f543-1d19-491d-be53-2a9641c6389a
+handle: Settings\Booking
+type: global
+name: Rezervace
+
+navigation:
+    parent: Settings\SocialNetworks
+    label: Rezervace
+    icon: icon-calendar-o
+    order: 30
+
+fields:
+    service:
+        label: Služba
+        span: left
+        tab: Obsah
+        type: dropdown
+        options:
+            previo: Previo
+    link:
+        label: Odkaz
+        type: text
+        span: left
+        tab: Obsah
+        commentAbove: Odkaz na rezervační stránku, který bude použit například pro tlačítko v hlavičce.
+    widget:
+        label: Widget
+        type: text
+        span: right
+        tab: Obsah
+        commentAbove: Adresa widgetu pro vložení do stránky.

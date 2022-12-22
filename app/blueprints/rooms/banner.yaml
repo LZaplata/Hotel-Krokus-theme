@@ -1,0 +1,26 @@
+uuid: a5dcf62a-f385-41af-86c1-8545c77a05f8
+handle: Rooms\Banner
+type: structure
+name: Banner
+showExport: false
+showImport: false
+multisite: sync
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Pokoje
+    icon: icon-bed
+    order: 10
+
+navigation:
+    label: Banner
+    icon: icon-file-image-o
+    order: 10
+    parent: Rooms\Banner
+
+fields:
+    _banner:
+        type: mixin
+        source: Mixin\Banner

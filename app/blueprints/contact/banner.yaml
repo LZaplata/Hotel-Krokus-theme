@@ -1,0 +1,26 @@
+uuid: 84a8e440-a794-4c7c-8c99-1fbbd797d980
+handle: Contact\Banner
+type: structure
+name: Kontakt
+showExport: false
+showImport: false
+multisite: sync
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Kontakt
+    icon: icon-phone
+    order: 60
+
+navigation:
+    label: Banner
+    icon: icon-file-image-o
+    order: 10
+    parent: Contact\Banner
+
+fields:
+    _banner:
+        type: mixin
+        source: Mixin\Banner

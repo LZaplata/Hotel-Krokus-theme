@@ -1,0 +1,26 @@
+uuid: 5196e580-d2bd-41c9-9608-34ce2bf91ad9
+handle: Homepage\Banner
+type: structure
+name: Banner
+showExport: false
+showImport: false
+multisite: sync
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Hotel
+    icon: icon-home
+    order: 10
+
+navigation:
+    label: Banner
+    icon: icon-file-image-o
+    order: 10
+    parent: Homepage\Banner
+
+fields:
+    _banner:
+        type: mixin
+        source: Mixin\Banner

@@ -1,0 +1,44 @@
+uuid: a78a8017-609f-48f6-8c91-1ce6b55cd65b
+handle: Mixin\Advantages
+type: mixin
+name: Výhody
+
+fields:
+    advantages_enabled:
+        label: Zobrazit blok s výhodami
+        type: switch
+        default: true
+    advantages_layout:
+        label: Layout výhod
+        type: dropdown
+        span: left
+        options:
+            lg: Velký (ikona + text)
+            sm: Malý (ikona + popisek)
+            custom: Vlastní (možnost vybrat položky ke zobrazení) 
+        default: lg
+        trigger:
+            action: show
+            field: advantages_enabled
+            condition: checked
+    advantages:
+        label: Výhody
+        type: entries
+        source: Settings\Advantage
+        span: right
+        trigger:
+            action: show
+            field: advantages_enabled
+            condition: checked
+    custom_layout_columns:
+        label: Položky ke zobrazení
+        type: checkboxlist
+        span: left
+        options:
+            title: Název
+            icon: Ikona
+            text: Text
+        trigger:
+            action: show
+            field: advantages_layout
+            condition: value[advantages_layout][custom]

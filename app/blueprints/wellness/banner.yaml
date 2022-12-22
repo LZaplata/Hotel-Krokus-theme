@@ -1,0 +1,26 @@
+uuid: c0ab7707-9a01-48be-99f7-62c682dea0e2
+handle: Wellness\Banner
+type: structure
+name: Banner
+showExport: false
+showImport: false
+multisite: sync
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Wellness
+    icon: icon-shower
+    order: 30
+
+navigation:
+    label: Banner
+    icon: icon-file-image-o
+    order: 10
+    parent: Wellness\Banner
+
+fields:
+    _banner:
+        type: mixin
+        source: Mixin\Banner

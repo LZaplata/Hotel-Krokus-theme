@@ -1,0 +1,30 @@
+uuid: 9d89f31d-51b9-4767-899f-46e538e45f1a
+handle: Settings\Advantage
+type: structure
+name: Výhody
+showExport: false
+showImport: false
+
+structure:
+    maxDepth: 1
+
+navigation:
+    icon:  icon-thumbs-o-up
+    parent: Settings\SocialNetworks
+    order: 40
+
+fields:
+    excerpt:
+        label: Popis
+        type: richeditor
+        size: small
+        translatable: true
+    text:
+        label: Text
+        type: richeditor
+        size: small
+        translatable: true
+    _icon:
+        type: mixin
+        source: Mixin\Icon
+        commentAbove: Nahrávejte obrázky v rozlišení 32x32px. Větší obrázky budou na tuto velikost oříznuty.

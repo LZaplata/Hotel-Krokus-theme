@@ -1,0 +1,15 @@
+uuid: ae4f581a-2dfc-4015-b286-27345897eb17
+handle: Mixin\Icon
+type: mixin
+name: Ikona
+
+fields:
+    icon:
+        label: Ikona
+        type: fileupload
+        maxFiles: 1
+        span: left
+        column: false
+        scope: false
+        fileTypes: png,jpg,jpeg,webp,svg
+        translatable: true
