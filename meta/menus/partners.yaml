@@ -1,0 +1,29 @@
+items:
+    -
+        title: 'Hotel Hvězda'
+        type: url
+        url: 'https://hotelhvezda.cz/'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: 'Enzian restaurant'
+        type: url
+        url: 'http://www.enzianrestaurant.cz/'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: 'DELI POST'
+        type: url
+        url: 'https://www.delipost.cz/'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+name: Partners

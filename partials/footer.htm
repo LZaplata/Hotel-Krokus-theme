@@ -44,18 +44,10 @@
 
                 <div class="col order-0 order-sm-1 order-lg-0">
                     <p class="fs-16 fw-bold mb-0 text-uppercase mb-4 ls-2">
-                        {{ "footer.links"|_ }}
+                        {{ "footer.partners"|_ }}
                     </p>
 
-                    <ul class="nav flex-column gap-2">
-                        {% if contact.gdpr_file %}
-                            <li class="nav-item">
-                                <a href="{{ contact.gdpr_file.path }}" class="nav-link fs-14 text-white opacity-65 opacity-100-hover fw-regular transition d-inline-block">
-                                    {{ "footer.gdpr"|_ }}
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
+                    {% component "partners" %}
                 </div>
 
                 <div class="col order-0">
@@ -77,9 +69,17 @@
         </div>
 
         <div class="container-lg pb-xl-4 mt-5">
-            <div class="row row-cols-1 row-cols-sm-2 d-flex align-items-center">
+            <div class="row row-cols-1 row-cols-sm-3 d-flex align-items-center">
                 <div class="col text-start opacity-65">
                     &copy; {{ "footer.copyright"|_ }}
+                </div>
+
+                <div class="col text-start mt-4 text-sm-center mt-sm-0">
+                    {% if contact.gdpr_file %}
+                        <a href="{{ contact.gdpr_file.path }}" class="nav-link fs-14 text-white opacity-65 opacity-100-hover fw-regular transition d-inline-block">
+                            {{ "footer.gdpr"|_ }}
+                        </a>
+                    {% endif %}
                 </div>
 
                 <div class="col text-start mt-4 text-sm-end mt-sm-0">
