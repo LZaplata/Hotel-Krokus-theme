@@ -2,6 +2,7 @@ uuid: 7665274d-4c8f-4ae1-a8d4-21bc208af6e4
 handle: Pec\Content
 type: single
 name: Obsah
+multisite: true
 
 navigation:
     parent: Pec\Banner
