@@ -1,0 +1,34 @@
+uuid: d8fbc982-b6db-4fc0-a303-c329ec1541b0
+handle: Settings\Reviews
+type: global
+name: Recenze
+
+navigation:
+    parent: Settings\SocialNetworks
+    icon:  icon-star-o
+    order: 50
+
+fields:
+    service:
+        label: Služba
+        type: dropdown
+        span: left
+        tab: Obsah
+        options:
+            trustyou: TrustYou
+    widget:
+        label: Widget recenzí
+        type: text
+        span: left
+        tab: Obsah
+        commentAbove: Adresa widgetu pro zobrazení recenzí na stránce.
+    previo_score_widget:
+        label: Widget celkového hodnocení
+        type: text
+        span: right
+        tab: Obsah
+        commentAbove: Adresa widgetu pro zobrazení celkového hodnocení na stránce.
+        trigger:
+            action: show
+            field: service
+            condition: trustyou

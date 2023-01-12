@@ -1,0 +1,83 @@
+uuid: 0a8d41cf-4d49-4f61-9cca-ad492024693a
+handle: Wellness\Content
+type: single
+name: Obsah
+multisite: true
+
+navigation:
+    parent: Wellness\Banner
+    label: Obsah
+    icon:  icon-columns
+    order: 20
+
+fields:
+    _content:
+        type: mixin
+        source: Mixin\Content
+    form_enabled:
+        label: Zobrazit rezervační formulář
+        type: switch
+        span: left
+        default: true
+    sauna_enabled:
+        label: Zobrazit ceník saunování
+        type: switch
+        span: left
+        default: true
+    sauna_heading:
+        label: Nadpis
+        type: text
+        trigger:
+            action: show
+            field: sauna_enabled
+            condition: checked
+        span: right
+    sauna_advantages:
+        label: Výhody
+        type: repeater
+        form:
+            fields:
+                _icon:
+                    type: mixin
+                    source: Mixin\Icon
+                description:
+                    label: Popis
+                    type: text
+                    span: right
+                    translatable: true
+        trigger:
+            action: show
+            field: sauna_enabled
+            condition: checked
+        itemsExpanded: false
+    sauna_text:
+        label: Text
+        type: richeditor
+        translatable: true
+        trigger:
+            action: show
+            field: sauna_enabled
+            condition: checked
+    contact_enabled:
+        label: Zobrazit telefon a email
+        type: switch
+        default: true
+        span: left
+    gallery_enabled:
+        label: Zobrazit galerii
+        type: switch
+        default: true
+        span: left
+    gallery:
+        label: Galerie
+        type: recordfinder
+        modelClass: LZaplata\Gallery\Models\Gallery
+        useRelation: false
+        span: right
+        list:
+            columns:
+                name: Název
+        trigger:
+            action: show
+            field: gallery_enabled
+            condition: checked

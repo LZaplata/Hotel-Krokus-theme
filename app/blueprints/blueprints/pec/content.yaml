@@ -1,0 +1,84 @@
+uuid: 7665274d-4c8f-4ae1-a8d4-21bc208af6e4
+handle: Pec\Content
+type: single
+name: Obsah
+
+navigation:
+    parent: Pec\Banner
+    label: Obsah
+    icon:  icon-columns
+    order: 20
+
+fields:
+    _content:
+        type: mixin
+        source: Mixin\Content
+    winter_enabled:
+        label: Zobrazit blok v zimě
+        type: switch
+        default: true
+        span: left
+    winter:
+        label: V zimě
+        type: richeditor
+        translatable: true
+        trigger:
+            action: show
+            field: winter_enabled
+            condition: checked
+    summer_enabled:
+        label: Zobrazit blok v létě
+        type: switch
+        default: true
+        span: left
+    summer:
+        label: V létě
+        type: richeditor
+        translatable: true
+        trigger:
+            action: show
+            field: summer_enabled
+            condition: checked
+    button_enabled:
+        label: Zobrazit tlačítko s odkazem na Pec pod Sněžkou
+        type: switch
+        default: true
+        span: left
+    button_label:
+        label: Popis
+        type: text
+        translatable: true
+        trigger:
+            action: show
+            field: button_enabled
+            condition: checked
+        span: left
+        validation: required_if:button_enabled,1
+    button_link:
+        label: Odkaz
+        type: text
+        translatable: true
+        trigger:
+            action: show
+            field: button_enabled
+            condition: checked
+        span: right
+        validation: required_if:button_enabled,1
+    gallery_enabled:
+        label: Zobrazit galerii
+        type: switch
+        default: true
+        span: left
+    gallery:
+        label: Galerie
+        type: recordfinder
+        modelClass: LZaplata\Gallery\Models\Gallery
+        useRelation: false
+        span: right
+        list:
+            columns:
+                name: Název
+        trigger:
+            action: show
+            field: gallery_enabled
+            condition: checked

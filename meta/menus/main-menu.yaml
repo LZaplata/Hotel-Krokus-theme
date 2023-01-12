@@ -33,21 +33,16 @@ items:
                     title: Rooms
     -
         title: Restaurace
-        nesting: null
         type: cms-page
-        url: null
         code: ''
         reference: restaurace
-        cmsPage: null
-        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
             locale:
                 en-gb:
-                    title: Restaurace
-                    url: /
+                    title: Restaurant
     -
         title: Wellness
         nesting: null
@@ -64,24 +59,18 @@ items:
             locale:
                 en-gb:
                     title: Wellness
-                    url: /
     -
         title: Galerie
-        nesting: null
         type: cms-page
-        url: null
         code: ''
         reference: galerie
-        cmsPage: null
-        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
             locale:
                 en-gb:
-                    title: Galerie
-                    url: /
+                    title: Gallery
     -
         title: Bonus
         nesting: null
@@ -98,7 +87,6 @@ items:
             locale:
                 en-gb:
                     title: Bonus
-                    url: /
     -
         title: Kontakt
         type: cms-page
@@ -110,23 +98,17 @@ items:
             isExternal: '0'
             locale:
                 en-gb:
-                    title: Kontakt
-                    url: /
+                    title: Contact
     -
         title: 'V Peci'
-        nesting: null
         type: cms-page
-        url: null
         code: ''
         reference: v-peci
-        cmsPage: null
-        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
             locale:
                 en-gb:
-                    title: 'V Peci'
-                    url: /
+                    title: 'In Pec'
 name: 'Hlavní menu'

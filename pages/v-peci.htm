@@ -9,9 +9,16 @@ handle = "Pec\Banner"
 handle = "Pec\Content"
 
 [Gallery galleryswiper]
+
+[viewBag]
+localeUrl[en-gb] = "/in-pec"
+localeTitle[en-gb] = "In Pec"
+localeDescription[en-gb] = "In Pec"
+localeMeta_title[en-gb] = "In Pec"
+localeMeta_description[en-gb] = "In Pec"
 ==
 <?php
-    use LZaplata\Gallery\Models\Gallery;
+use LZaplata\Gallery\Models\Gallery;
 
     function onStart() {
         $gallery = Gallery::find($this["content"]["gallery"] ?? null);

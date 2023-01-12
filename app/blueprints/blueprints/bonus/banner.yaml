@@ -1,0 +1,26 @@
+uuid: 83f0ede7-9070-4ecb-9df6-68a788355041
+handle: Bonus\Banner
+type: structure
+name: Bonus
+showExport: false
+showImport: false
+multisite: true
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: Bonus
+    icon: icon-plus
+    order: 40
+
+navigation:
+    label: Banner
+    icon: icon-file-image-o
+    order: 10
+    parent: Bonus\Banner
+
+fields:
+    _banner:
+        type: mixin
+        source: Mixin\Banner

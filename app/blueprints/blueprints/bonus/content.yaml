@@ -1,0 +1,64 @@
+uuid: ec0324c4-ccf2-4476-9f16-d69944cb03df
+handle: Bonus\Content
+type: single
+name: Obsah
+multisite: true
+
+navigation:
+    parent: Bonus\Banner
+    label: Obsah
+    icon:  icon-columns
+    order: 20
+
+fields:
+    advantages_enabled:
+        label: Zobrazit výhody
+        type: switch
+        span: left
+        default: true
+    advantages:
+        label: Výhody
+        type: repeater
+        form:
+            fields:
+                _icon:
+                    type: mixin
+                    source: Mixin\Icon
+                description:
+                    label: Popis
+                    type: text
+                    span: right
+                    translatable: true
+        trigger:
+            action: show
+            field: advantages_enabled
+            condition: checked
+        itemsExpanded: false
+    form_enabled:
+        label: Zobrazit kontaktní formulář
+        type: switch
+        span: left
+        default: true
+    contact_enabled:
+        label: Zobrazit telefon a email
+        type: switch
+        default: true
+        span: left
+    gallery_enabled:
+        label: Zobrazit galerii
+        type: switch
+        default: true
+        span: left
+    gallery:
+        label: Galerie
+        type: recordfinder
+        modelClass: LZaplata\Gallery\Models\Gallery
+        useRelation: false
+        span: right
+        list:
+            columns:
+                name: Název
+        trigger:
+            action: show
+            field: gallery_enabled
+            condition: checked

@@ -10,7 +10,6 @@ handle = "Bonus\Content"
 
 [contactForm contactform]
 disable_fields = "date|time_from|time_to"
-send_btn_label = "Odeslat formulář"
 notification_template = "janvince.smallcontactform::mail.notification.bonus_cs"
 autoreply_address_replyto = "email"
 
@@ -58,7 +57,9 @@ use LZaplata\Gallery\Models\Gallery;
             </h2>
 
             <div class="col-xl-10 offset-xl-1 col-xxl-8 offset-xxl-2">
-                {% component "contactform" %}
+                {% set send_btn_label = "bonus.form.send"|_ %}
+
+                {% component "contactform" send_btn_label=send_btn_label %}
             </div>
         </div>
     </div>

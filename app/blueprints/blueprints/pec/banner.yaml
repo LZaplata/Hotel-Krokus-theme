@@ -1,0 +1,26 @@
+uuid: eb8acb7d-b97a-47c2-bada-821c5c47b46c
+handle: Pec\Banner
+type: structure
+name: V Peci
+showExport: false
+showImport: false
+multisite: sync
+
+structure:
+    maxDepth: 1
+
+primaryNavigation:
+    label: V Peci
+    icon: icon-external-link
+    order: 50
+
+navigation:
+    label: Banner
+    icon: icon-file-image-o
+    order: 10
+    parent: Pec\Banner
+
+fields:
+    _banner:
+        type: mixin
+        source: Mixin\Banner

@@ -1,0 +1,43 @@
+button.booking: "Reservation"
+button.whole_gallery: "Whole gallery"
+
+footer.show_on_map: "Show on map"
+footer.links: "Links"
+footer.follow_us: "Follow us"
+footer.copyright: "All rights reserved"
+footer.gdpr: "Terms and conditions of sale and cancellation"
+footer.partners: "Partners"
+
+rooms.choose_room: "Choose room"
+rooms.book_room: "Reserve room"
+rooms.equipment.show_all: "Show all"
+
+wellness.book: "Reserve"
+wellness.book_your_activity: "Book your activity"
+
+bonus.contact_us: "Contact us for your bonus"
+bonus.form.send: "Send form"
+
+pec.winter.heading: "In winter"
+pec.summer.heading: "In summer"
+
+contact.operator.heading: "Provider"
+contact.operator.ico: "ID"
+contact.operator.file_number: "File number"
+contact.executive.heading: "Managing Director"
+contact.button.booking: "I want to make a reservation"
+contact.button.gdpr: "Privacy Policy"
+contact.show_on_map: "Show on map"
+
+Jméno: "Name"
+Příjmení: "Surname"
+Telefon: "Phone"
+Počet osob: "Number of persons"
+Hodnota poukazu: "Voucher value"
+Platnost OD: "Valid FROM"
+Platnost DO: "Valid UNTIL"
+Poznámka: "Note"
+Datum: "Date"
+Rezervace OD: "Reservation FROM"
+Rezervace DO: "Reservation UNTIL"
+Odeslat formulář: "Send form"

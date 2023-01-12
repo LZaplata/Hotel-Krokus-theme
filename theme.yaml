@@ -14,3 +14,4 @@ require:
     - janvince.smallcontactform
 translate:
     cs: lang/cs.yaml
+    en-gb: lang/en.yaml

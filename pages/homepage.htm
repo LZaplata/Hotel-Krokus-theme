@@ -1,6 +1,9 @@
 url = "/"
 layout = "default"
 title = "Úvod"
+description = "Homepage"
+meta_title = "Homepage"
+meta_description = "Homepage"
 
 [collection banners]
 handle = "Homepage\Banner"
@@ -9,9 +12,15 @@ handle = "Homepage\Banner"
 handle = "Homepage\Content"
 
 [Gallery galleryswiper]
+
+[viewBag]
+localeTitle[en-gb] = "Homepage"
+localeDescription[en-gb] = "Homepage"
+localeMeta_title[en-gb] = "Homepage"
+localeMeta_description[en-gb] = "Homepage"
 ==
 <?php
-    use LZaplata\Gallery\Models\Gallery;
+use LZaplata\Gallery\Models\Gallery;
 
     function onStart() {
         $gallery = Gallery::find($this["content"]["gallery"] ?? null);

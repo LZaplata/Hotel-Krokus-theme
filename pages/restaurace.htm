@@ -11,9 +11,16 @@ handle = "Restaurant\Content"
 [Gallery menu]
 
 [Gallery galleryswiper]
+
+[viewBag]
+localeUrl[en-gb] = "/restaurant"
+localeTitle[en-gb] = "Restaurant"
+localeDescription[en-gb] = "Restaurant"
+localeMeta_title[en-gb] = "Restaurant"
+localeMeta_description[en-gb] = "Restaurant"
 ==
 <?php
-    use LZaplata\Gallery\Models\Gallery;
+use LZaplata\Gallery\Models\Gallery;
 
     function onStart() {
         $gallery = Gallery::find($this["content"]["gallery"] ?? null);

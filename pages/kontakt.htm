@@ -7,6 +7,13 @@ handle = "Contact\Banner"
 
 [section content]
 handle = "Contact\Content"
+
+[viewBag]
+localeUrl[en-gb] = "/contact"
+localeTitle[en-gb] = "Contact"
+localeDescription[en-gb] = "Contact"
+localeMeta_title[en-gb] = "Contact"
+localeMeta_description[en-gb] = "Contact"
 ==
 {% partial "banner/default" banners=banners %}
 
@@ -47,7 +54,7 @@ handle = "Contact\Content"
                     {% if contact.map_link %}
                         <p class="mb-0">
                             <a href="{{ contact.map_link }}" target="_blank">
-                                Ukázat na mapě
+                                {{  "contact.show_on_map"|_ }}
                             </a>
                         </p>
                     {% endif %}

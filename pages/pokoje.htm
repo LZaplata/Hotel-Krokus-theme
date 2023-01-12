@@ -1,6 +1,6 @@
-title = "Pokoje"
-layout = "default"
 url = "/pokoje"
+layout = "default"
+title = "Pokoje"
 
 [collection banners]
 handle = "Rooms\Banner"
@@ -10,6 +10,13 @@ handle = "Rooms\Content"
 
 [collection rooms]
 handle = "Rooms\Room"
+
+[viewBag]
+localeUrl[en-gb] = "/rooms"
+localeTitle[en-gb] = "Rooms"
+localeDescription[en-gb] = "Rooms"
+localeMeta_title[en-gb] = "Rooms"
+localeMeta_description[en-gb] = "Rooms"
 ==
 {% partial "banner/default" banners=banners %}
 

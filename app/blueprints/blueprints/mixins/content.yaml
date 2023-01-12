@@ -1,0 +1,16 @@
+uuid: 230f99c8-188b-4f20-b08d-1452dddaec96
+handle: Mixin\Content
+type: mixin
+name: Obsah
+
+fields:
+    heading:
+        label: Nadpis stránky
+        type: text
+        span: left
+        translatable: true
+    text:
+        label: Text
+        type: richeditor
+        size: huge
+        translatable: true
