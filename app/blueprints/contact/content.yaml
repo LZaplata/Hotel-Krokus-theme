@@ -2,6 +2,7 @@ uuid: deb817bd-b340-4fe1-aacc-7941b1f3580e
 handle: Contact\Content
 type: single
 name: Obsah
+multisite: true
 
 navigation:
     parent: Contact\Banner

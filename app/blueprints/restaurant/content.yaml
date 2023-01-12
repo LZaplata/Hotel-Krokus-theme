@@ -2,6 +2,7 @@ uuid: ea639e61-53bc-4dad-9689-2a4085cac804
 handle: Restaurant\Content
 type: single
 name: Obsah
+multisite: true
 
 navigation:
     parent: Restaurant\Banner

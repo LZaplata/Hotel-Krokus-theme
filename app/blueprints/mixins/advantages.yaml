@@ -2,6 +2,7 @@ uuid: a78a8017-609f-48f6-8c91-1ce6b55cd65b
 handle: Mixin\Advantages
 type: mixin
 name: Výhody
+multisite: true
 
 fields:
     advantages_enabled:

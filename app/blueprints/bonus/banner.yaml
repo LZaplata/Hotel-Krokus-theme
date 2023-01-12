@@ -4,7 +4,7 @@ type: structure
 name: Bonus
 showExport: false
 showImport: false
-multisite: sync
+multisite: true
 
 structure:
     maxDepth: 1

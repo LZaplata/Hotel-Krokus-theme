@@ -2,6 +2,7 @@ uuid: e369f543-1d19-491d-be53-2a9641c6389a
 handle: Settings\Booking
 type: global
 name: Rezervace
+multisite: true
 
 navigation:
     parent: Settings\SocialNetworks

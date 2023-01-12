@@ -2,6 +2,7 @@ uuid: ec0324c4-ccf2-4476-9f16-d69944cb03df
 handle: Bonus\Content
 type: single
 name: Obsah
+multisite: true
 
 navigation:
     parent: Bonus\Banner

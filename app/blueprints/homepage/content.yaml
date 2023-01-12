@@ -2,6 +2,7 @@ uuid: 14506957-5647-4536-b242-027742e57308
 handle: Homepage\Content
 type: single
 name: Obsah
+multisite: true
 
 navigation:
     parent: Homepage\Banner

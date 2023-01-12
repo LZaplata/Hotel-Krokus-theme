@@ -2,6 +2,7 @@ uuid: 0a8d41cf-4d49-4f61-9cca-ad492024693a
 handle: Wellness\Content
 type: single
 name: Obsah
+multisite: true
 
 navigation:
     parent: Wellness\Banner

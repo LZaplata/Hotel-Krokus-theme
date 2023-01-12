@@ -4,6 +4,7 @@ type: structure
 name: Výhody
 showExport: false
 showImport: false
+multisite: true
 
 structure:
     maxDepth: 1
