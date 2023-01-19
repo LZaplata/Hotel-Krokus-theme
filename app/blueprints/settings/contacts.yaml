@@ -2,6 +2,7 @@ uuid: 4f5360e7-99a4-4bc1-9b22-ecbf027313eb
 handle: Settings\Contacts
 type: global
 name: Kontakt
+multisite: true
 
 navigation:
     parent: Settings\SocialNetworks
@@ -92,6 +93,7 @@ fields:
         type: textarea
         size: small
         tab: Provozovatel
+        translatable: true
     executive_name:
         label: Jméno
         type: text
