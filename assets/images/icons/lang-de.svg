@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    id="flag-icon-css-de"
-   viewBox="0 0 23 5.7500038"
+   viewBox="0 0 23 17.25"
    version="1.1"
    sodipodi:docname="lang-de.svg"
    width="23"
-   height="5.7500038"
+   height="17.25"
    inkscape:version="1.2 (dc2aeda, 2022-05-15)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs1900" />
+     id="defs1824" />
   <sodipodi:namedview
-     id="namedview1898"
+     id="namedview1822"
      pagecolor="#505050"
      bordercolor="#eeeeee"
      borderopacity="1"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      showgrid="false"
-     inkscape:zoom="15.733333"
-     inkscape:cx="4.0677966"
-     inkscape:cy="5.6885593"
+     inkscape:zoom="11.125147"
+     inkscape:cx="6.2920519"
+     inkscape:cy="6.6965409"
      inkscape:window-width="1680"
      inkscape:window-height="997"
      inkscape:window-x="0"
@@ -34,16 +34,16 @@
      inkscape:current-layer="flag-icon-css-de" />
   <path
      fill="#ffce00"
-     d="M 0,5.7500036 H 23 V 11.500002 H 0 Z"
-     id="path1891"
-     style="stroke-width:0.0359372" />
+     d="m 0,11.5 h 23 v 5.75 H 0 Z"
+     id="path1815"
+     style="stroke-width:0.0359375" />
   <path
-     d="M 0,-5.7500004 H 23 V 0 H 0 Z"
-     id="path1893"
-     style="stroke-width:0.0359372" />
+     d="M 0,0 H 23 V 5.75 H 0 Z"
+     id="path1817"
+     style="stroke-width:0.0359375" />
   <path
      fill="#dd0000"
-     d="M 0,0 H 23 V 5.7500036 H 0 Z"
-     id="path1895"
-     style="stroke-width:0.0359372" />
+     d="M 0,5.75 H 23 V 11.5 H 0 Z"
+     id="path1819"
+     style="stroke-width:0.0359375" />
 </svg>
