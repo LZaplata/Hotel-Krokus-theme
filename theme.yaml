@@ -15,3 +15,4 @@ require:
 translate:
     cs: lang/cs.yaml
     en-gb: lang/en.yaml
+    de: lang/de.yaml

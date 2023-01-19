@@ -1,0 +1,43 @@
+button.booking: "Reservierung"
+button.whole_gallery: "Ganze Galerie"
+
+footer.show_on_map: "Auf der Karte anzeigen"
+footer.links: "Verknüpfungen"
+footer.follow_us: "Folgen Sie uns"
+footer.copyright: "Alle Rechte vorbehalten"
+footer.gdpr: "Verkaufs- und Widerrufsbedingungen"
+footer.partners: "Partner"
+
+rooms.choose_room: "Zimmer wählen"
+rooms.book_room: "Zimmer reservieren"
+rooms.equipment.show_all: "Zeige alles"
+
+wellness.book: "Reservieren"
+wellness.book_your_activity: "Buchen Sie Ihre Aktivität"
+
+bonus.contact_us: "Kontaktieren Sie uns für Ihren Bonus"
+bonus.form.send: "Sende Formular"
+
+pec.winter.heading: "Im Winter"
+pec.summer.heading: "Im Sommer"
+
+contact.operator.heading: "Betreiber"
+contact.operator.ico: "Steuer-ID"
+contact.operator.file_number: "Aktenzeichen"
+contact.executive.heading: "Geschäftsführer"
+contact.button.booking: "Ich möchte reservieren"
+contact.button.gdpr: "Datenschutzgrundsätze"
+contact.show_on_map: "Auf der Karte anzeigen"
+
+Jméno: "Name"
+Příjmení: "Nachname"
+Telefon: "Telefon"
+Počet osob: "Personenzahl"
+Hodnota poukazu: "Gutscheinwert"
+Platnost OD: "Gültig AB"
+Platnost DO: "Gültig BIS"
+Poznámka: "Notiz"
+Datum: "Datum"
+Rezervace OD: "Reservierung VON"
+Rezervace DO: "Reservierung BIS"
+Odeslat formulář: "Sende Formular"
