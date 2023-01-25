@@ -1,0 +1,43 @@
+button.booking: "Rezerwacja"
+button.whole_gallery: "Cała galeria"
+
+footer.show_on_map: "Pokaż na mapie"
+footer.links: "Spinki do mankietów"
+footer.follow_us: "Obserwuj nas"
+footer.copyright: "Všechna práva vyhrazena"
+footer.gdpr: "Wszelkie prawa zastrzeżone"
+footer.partners: "Wzmacniacz"
+
+rooms.choose_room: "Wybierz pokój"
+rooms.book_room: "Zarezerwować pokój"
+rooms.equipment.show_all: "Pokaż wszystko"
+
+wellness.book: "Zarezerwuj"
+wellness.book_your_activity: "Zarezerwuj swoją aktywność"
+
+bonus.contact_us: "Skontaktuj się z nami, aby otrzymać bonus"
+bonus.form.send: "Prześlij formularz"
+
+pec.winter.heading: "W zimę"
+pec.summer.heading: "Latem"
+
+contact.operator.heading: "Operator"
+contact.operator.ico: "Regon"
+contact.operator.file_number: "Sygnatura akt"
+contact.executive.heading: "Członek zarządu"
+contact.button.booking: "Rezerwuję"
+contact.button.gdpr: "Polityka prywatności"
+contact.show_on_map: "Pokaż na mapie"
+
+Jméno: "Imię"
+Příjmení: "Nazwisko"
+Telefon: "Telefon"
+Počet osob: "Liczba osób"
+Hodnota poukazu: "Wartość kuponu"
+Platnost OD: "Obowiązuje OD"
+Platnost DO: "Ważność DO"
+Poznámka: "Uwaga"
+Datum: "Data"
+Rezervace OD: "Rezerwacja OD"
+Rezervace DO: "Rezerwacja DO"
+Odeslat formulář: "Prześlij formularz"
