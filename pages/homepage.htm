@@ -37,6 +37,12 @@ use LZaplata\Gallery\Models\Gallery;
     }
 ?>
 ==
+{% if reviews.trustyou_score_widget %}
+    <div class="position-absolute start-0 ms-3 mt-3" id="trustyou-score-widget">
+        {{ reviews.trustyou_score_widget|raw }}
+    </div>
+{% endif %}
+
 {% partial "banner/default" banners=banners %}
 
 {% partial "chessboard/default" chessboard=content.chessboard %}

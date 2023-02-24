@@ -2,6 +2,7 @@ uuid: d8fbc982-b6db-4fc0-a303-c329ec1541b0
 handle: Settings\Reviews
 type: global
 name: Recenze
+multisite: true
 
 navigation:
     parent: Settings\SocialNetworks
@@ -22,9 +23,9 @@ fields:
         span: left
         tab: Obsah
         commentAbove: Adresa widgetu pro zobrazení recenzí na stránce.
-    previo_score_widget:
+    trustyou_score_widget:
         label: Widget celkového hodnocení
-        type: text
+        type: textarea
         span: right
         tab: Obsah
         commentAbove: Adresa widgetu pro zobrazení celkového hodnocení na stránce.
