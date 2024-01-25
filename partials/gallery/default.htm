@@ -1,5 +1,5 @@
 <div class="row row-cols-1 g-4 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-    {% for image in __SELF__.gallery.images %}
+    {% for image in __SELF__.images %}
         <div class="col">
             <a href="{{ image.path }}" title="{{ image.description }}" class="gallery-image position-relative d-flex">
                 <img src="{{ image.path|resize(298, 222, { mode: 'crop' }) }}" alt="{{ image.title }}" class="img-fluid w-100">

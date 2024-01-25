@@ -1,6 +1,6 @@
 <div class="swiper gallery-swiper">
     <div class="swiper-wrapper">
-        {% for image in __SELF__.gallery.images.take(8) %}
+        {% for image in __SELF__.images.take(8) %}
             <div class="swiper-slide">
                 <a href="{{ image.path }}" title="{{ image.description }}" class="swiper-image position-relative d-flex">
                     <img src="{{ image.path|resize(298, 222, { mode: 'crop' }) }}" alt="{{ image.title }}" class="img-fluid w-100">
