@@ -1,0 +1,639 @@
+url = "/recenze"
+layout = "default"
+title = "Recenze"
+
+[collection banners]
+handle = "Reviews\Banner"
+
+[viewBag]
+localeUrl[en-gb] = "/review"
+localeTitle[en-gb] = "Review"
+localeDescription[en-gb] = "localeDescription-EN"
+localeMeta_title[en-gb] = "localeMeta_title-EN"
+localeMeta_description[en-gb] = "localeMeta_description-EN"
+localeUrl[de] = "/rezension"
+localeTitle[de] = "Rezension"
+localeDescription[de] = "localeDescription-DE"
+localeMeta_title[de] = "localeMeta_title-DE"
+localeMeta_description[de] = "localeMeta_description-DE"
+localeUrl[pl] = "/recenzja"
+localeTitle[pl] = "Recenzja"
+localeDescription[pl] = "localeDescription-PL"
+localeMeta_title[pl] = "localeMeta_title-PL"
+localeMeta_description[pl] = "localeMeta_description-PL"
+==
+<div class="container-fluid px-0 px-md-40 mt-4" id="banner">
+  <div class="swiper banner-swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+      <div class="swiper-wrapper" id="swiper-wrapper-a110e8d9c5692a10fc" aria-live="off" style="transform: translate3d(0px, 0px, 0px);">
+          <div class="swiper-slide position-relative swiper-slide-active" role="group" aria-label="1 / 1" style="width: 1840px;">
+              <img src="https://www.hotelkrokus.cz/storage/app/uploads/public/63a/069/b3f/63a069b3f112b203558967.jpg" alt="" class="w-100">
+              <div class="position-absolute w-100 h-100 start-0 top-0 gradient"></div>
+              <div class="container-lg position-absolute h-100 start-50 top-0 translate-middle-x d-flex align-items-center justify-content-center">
+                  <div class="d-flex flex-column gap-1 px-3">
+                      <h1 class="mb-0 fs-72 lh-74 text-white text-center">
+                          Recenze
+                      </h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-button-next rounded-circle transition swiper-button-disabled swiper-button-lock" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-a110e8d9c5692a10fc" aria-disabled="true">
+          <img src="https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/images/icons/arrow-right.svg" alt="right">
+      </div>
+      <div class="swiper-button-prev rounded-circle transition swiper-button-disabled swiper-button-lock" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-a110e8d9c5692a10fc" aria-disabled="true">
+          <img src="https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/images/icons/arrow-left.svg" alt="left">
+      </div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+  </div>
+</div>
+
+<div class="container-fluid py-5 pb-3" id="content">
+  <div class="container-lg">
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .trust-ranking__holder {
+        max-width: 500px;
+        margin: 56px auto 0;
+        }
+        .fa {
+        font-size: 18px;
+        margin-right: 1px;
+        color: #cdcdcd;
+        }
+        .checked {
+        color: #456943;
+        }
+        .trust-ranking__item {
+        display: flex;
+        margin: 15px 0;
+        }
+        .trust-ranking__star-box {
+        display: flex;
+        align-items: center;
+        width: 85px;
+        font-size: 18px;
+        }
+        .trust-ranking__line-box {
+        position: relative;
+        width: calc(100% - 105px - 30px - 35px);
+        height: 15px;
+        margin: auto 15px auto 15px;
+        }
+        .trust-ranking__line-box .line-grey {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(205, 205, 205, .6);
+        }
+        .trust-ranking__line-box .line-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #456943;
+        }
+        .trust-ranking__number-box {
+        width: 80px;
+        color: #000;
+        font-size: 14px;
+        }
+        .trust-ranking__title {
+        color: #000;
+        font-size: 32px;
+        text-align: center;
+        }
+    </style>
+    <style>
+        h1,
+        h2,
+        h3,
+        span {
+        font-family: Muli;
+        }
+        .trust-review {
+        max-width: 800px;
+        margin: 60px auto 0;
+        }
+        .trust-review__title {
+        color: #000;
+        font-size: 32px;
+        text-align: center;
+        margin: 0;
+        }
+        .trust-review__subtitle {
+        color: #000;
+        font-size: 26px;
+        text-align: center;
+        margin: 0;
+        }
+        .trust-review__item:first-of-type {
+        border-top: 0;
+        }
+        .trust-review__item {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: solid 1px rgba(205, 205, 205, .5);
+        }
+        .trust-review__top {
+        display: flex;
+        align-items: center;
+        }
+        .trust-review__bottom {
+        margin-top: 35px;
+        }
+        .trust-review__note-box {
+        margin: 0;
+        }
+        .trust-review__note-box .text {
+        color: #456943;
+        font-size: 27px;
+        font-weight: 600;
+        }
+        .trust-review__note-box .value {
+        color: #4e4e4e;
+        font-size: 18px;
+        font-weight: 600;
+        }
+        .trust-review__text-box {
+        margin: 0 0 0 35px;
+        }
+        .t-content,
+        .trust-review__comment,
+        .trust-review__date {
+        margin-top: 10px;
+        color: #292929;
+        font-family: Muli;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.47;
+        }
+        .trust-review__author-box {
+        margin: 0;
+        color: #000;
+        font-family: Muli;
+        font-size: 14px;
+        line-height: 1.4;
+        }
+        .trust-review__author-box .value {
+        font-weight: 600;
+        }
+        .trust-review__date {
+        margin: 3px 0 0;
+        color: #000;
+        }
+        .trust-review__bottom {
+        margin-top: 35px;
+        }
+        .trust-review__comment {
+        margin: 0;
+        color: #000;
+        font-size: 16px;
+        }
+        .trust-review-response {
+        margin: 25px 0 0;
+        }
+        .trust-review-response__date {
+        margin: 0;
+        color: #999;
+        font-family: Muli;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4;
+        }
+        .trust-review-response__text {
+        display: block;
+        margin: 8px 0 0;
+        color: #999;
+        font-family: Muli;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.4;
+        }
+        .trust-review__logo-box {
+        display: flex;
+        justify-content: flex-end;
+        max-width: 800px;
+        margin: 45px auto;
+        }
+        .trust-review__logo-link {
+        display: block;
+        width: 160px;
+        }
+        img.lazy {
+        opacity: 0;
+        transition: opacity .2s;
+        }
+        img.lazy.loaded {
+        opacity: 1;
+        }
+        .trust-review__logo {
+        width: 100%;
+        }
+        .review-show-more {
+        padding: 0;
+        cursor: pointer;
+        color: rgb(41, 121, 175);
+        background-color: transparent;
+        border: none;
+        font-size: 16px;
+        line-height: 166%;
+        margin: 60px auto 20px auto;
+        display: flex;
+        }
+    </style>
+    <div class="trust-ranking__holder">
+        <h2 class="trust-ranking__title"> RECENZE</h2>
+        <div class="trust-ranking__item">
+            <div class="trust-ranking__star-box">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </div>
+            <div class="trust-ranking__line-box">
+                <div class="line-grey"></div>
+                <div class="line-accent star-5 js-trust-line" style="width: 0%;"></div>
+            </div>
+            <div class="trust-ranking__number-box"> <span class="star-5 js-trust-number">0</span> </div>
+        </div>
+        <div class="trust-ranking__item">
+            <div class="trust-ranking__star-box">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <div class="trust-ranking__line-box">
+                <div class="line-grey"></div>
+                <div class="line-accent star-4 js-trust-line" style="width: 0%;"></div>
+            </div>
+            <div class="trust-ranking__number-box"> <span class="star-4 js-trust-number">0</span> </div>
+        </div>
+        <div class="trust-ranking__item">
+            <div class="trust-ranking__star-box">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <div class="trust-ranking__line-box">
+                <div class="line-grey"></div>
+                <div class="line-accent star-3 js-trust-line" style="width: 0%;"></div>
+            </div>
+            <div class="trust-ranking__number-box"> <span class="star-3 js-trust-number">0</span> </div>
+        </div>
+        <div class="trust-ranking__item">
+            <div class="trust-ranking__star-box">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <div class="trust-ranking__line-box">
+                <div class="line-grey"></div>
+                <div class="line-accent star-2 js-trust-line" style="width: 0%;"></div>
+            </div>
+            <div class="trust-ranking__number-box"> <span class="star-2 js-trust-number">0</span> </div>
+        </div>
+        <div class="trust-ranking__item">
+            <div class="trust-ranking__star-box">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <div class="trust-ranking__line-box">
+                <div class="line-grey"></div>
+                <div class="line-accent star-1 js-trust-line" style="width: 0%;"></div>
+            </div>
+            <div class="trust-ranking__number-box"> <span class="star-1 js-trust-number">0</span> </div>
+        </div>
+    </div>
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+    <style>
+        .trust-info {
+        margin-top: 60px;
+        }
+        h2,
+        span {
+        font-family: Muli;
+        }
+        .trust-info__main-title {
+        color: #000;
+        font-size: 32px;
+        text-align: center;
+        }
+        .trust-info__holder {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+        }
+        .trust-info__item {
+        width: 130px;
+        margin: 10px 30px;
+        }
+        .trust-info__svg-item {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        }
+        svg:not(:root) {
+        overflow: hidden;
+        }
+        .trust-info__svg-ring {
+        stroke: rgba(205, 205, 205, .5);
+        }
+        .trust-info__svg-fill {
+        stroke: #456943;
+        transform-origin: center;
+        }
+        .trust-info__svg-icon.icon-trust-couple {
+        font-size: 42px;
+        }
+        .trust-info__svg-icon {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        margin-top: -18px;
+        margin-right: -18px;
+        color: #000;
+        font-size: 36px;
+        }
+        [class*=' icon-'],
+        [class^=icon-] {
+        speak: none;
+        font-family: icomoon;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+        .icon-trust-couple:before {
+        content: '\e99f';
+        }
+        .icon-trust-family:before {
+        content: '\e9a0';
+        }
+        .icon-trust-business:before {
+        content: '\e99e';
+        }
+        .icon-trust-single:before {
+        content: '\e9a1';
+        }
+        @font-face {
+        font-family: 'icomoon';
+        src: url('../icomoon.eot');
+        src: url('../icomoon.eot?#iefix') format('embedded-opentype'), url('icomoon.woff') format('woff'), url('icomoon.ttf') format('truetype'), url('icomoon.svg') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        }
+        .trust-info__title {
+        display: block;
+        margin: 15px 0 5px;
+        color: #000;
+        font-family: Muli, serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.4;
+        text-align: center;
+        }
+    </style>
+    </head>
+    <div class="trust-info">
+        <h2 class="trust-info__main-title"> Typ cestujícího</h2>
+        <div class="trust-info__holder">
+            <div class="trust-info__item js-trust-info--couple">
+                <div class="trust-info__svg-item">
+                    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+                        <circle class="trust-info__svg-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                            stroke-width="6"></circle>
+                        <circle class="js-trust-svg-fill trust-info__svg-fill" cx="20" cy="20" r="15.91549430918954"
+                            fill="transparent" stroke-width="6" stroke-dasharray="0 100" stroke-dashoffset="0"
+                            style="transform: rotate(-90deg);"></circle>
+                    </svg>
+                    <span class="trust-info__svg-icon icon icon-trust-couple"></span>
+                    <i class="ty-icon ty-icon-family"></i>
+                </div>
+                <div class="trust-info__text-box"> <span class="trust-info__title">Páry</span> <span class="trust-info__notes"> <span class="percent js-trust-info-percent"></span> <span class="number js-trust-info-number"></span> </span>
+                </div>
+            </div>
+            <div class="trust-info__item js-trust-info--family">
+                <div class="trust-info__svg-item">
+                    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+                        <circle class="trust-info__svg-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                            stroke-width="6"></circle>
+                        <circle class="js-trust-svg-fill trust-info__svg-fill" cx="20" cy="20" r="15.91549430918954"
+                            fill="transparent" stroke-width="6" stroke-dasharray="0 100" stroke-dashoffset="0"
+                            style="transform: rotate(-90deg);"></circle>
+                    </svg>
+                    <span class="trust-info__svg-icon icon icon-trust-family"></span> 
+                </div>
+                <div class="trust-info__text-box"> <span class="trust-info__title">Rodina</span> <span class="trust-info__notes"> <span class="percent js-trust-info-percent"></span> <span class="number js-trust-info-number"></span> </span>
+                </div>
+            </div>
+            <div class="trust-info__item js-trust-info--business">
+                <div class="trust-info__svg-item">
+                    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+                        <circle class="trust-info__svg-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                            stroke-width="6"></circle>
+                        <circle class="js-trust-svg-fill trust-info__svg-fill" cx="20" cy="20" r="15.91549430918954"
+                            fill="transparent" stroke-width="6" stroke-dasharray="0 100" stroke-dashoffset="0"
+                            style="transform: rotate(-90deg);"></circle>
+                    </svg>
+                    <span class="trust-info__svg-icon icon icon-trust-business"></span> 
+                </div>
+                <div class="trust-info__text-box"> <span class="trust-info__title">Byznys</span> <span class="trust-info__notes"> <span class="percent js-trust-info-percent"></span> <span class="number js-trust-info-number"></span> </span>
+                </div>
+            </div>
+            <div class="trust-info__item js-trust-info--single">
+                <div class="trust-info__svg-item">
+                    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+                        <circle class="trust-info__svg-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent"
+                            stroke-width="6"></circle>
+                        <circle class="js-trust-svg-fill trust-info__svg-fill" cx="20" cy="20" r="15.91549430918954"
+                            fill="transparent" stroke-width="6" stroke-dasharray="0 100" stroke-dashoffset="0"
+                            style="transform: rotate(-90deg);"></circle>
+                    </svg>
+                    <span class="trust-info__svg-icon icon icon-trust-single"></span> 
+                </div>
+                <div class="trust-info__text-box"> <span class="trust-info__title">Host cestující sám</span> <span class="trust-info__notes"> <span class="percent js-trust-info-percent"></span> <span class="number js-trust-info-number"></span> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const travelerDistribution = async() => {
+          const response = await fetch('https://api.trustyou.com/hotels/4119ffe4-7c56-4970-9ab0-a40ac89d2a79/traveler_distribution.json?key=08969830-19c9-45d3-a58d-9db02c953656');
+            const myJson = await response.json();
+            if (myJson.meta.code === 200) {
+                console.log(myJson.response);
+                console.log(myJson.response.reviews_count);
+                for (let i = 0; i < myJson.response.reviews_distribution.length; i++) {
+                    const element = myJson.response.reviews_distribution[i];
+                    if (element.filter.trip_type === "family") {
+                        let svg = document.querySelector('.js-trust-info--family .trust-info__svg-fill');
+                        svg.setAttribute("stroke-dasharray", element.reviews_percent + " 100")
+        
+                    } else if (element.filter.trip_type === "couple") {
+                        let svg = document.querySelector('.js-trust-info--couple .trust-info__svg-fill');
+                        svg.setAttribute("stroke-dasharray", element.reviews_percent + " 100")
+        
+                    } else if (element.filter.trip_type === "business") {
+                        let svg = document.querySelector('.js-trust-info--business .trust-info__svg-fill');
+                        svg.setAttribute("stroke-dasharray", element.reviews_percent + " 100")
+        
+                    } else if (element.filter.trip_type === "solo") {
+                        let svg = document.querySelector('.js-trust-info--single .trust-info__svg-fill');
+                        svg.setAttribute("stroke-dasharray", element.reviews_percent + " 100")
+                    }
+                }
+            }
+        }
+        travelerDistribution();
+    </script>
+    <script>
+        const userAction = async() => {
+          const response = await fetch('https://api.trustyou.com/hotels/4119ffe4-7c56-4970-9ab0-a40ac89d2a79/trust_score_distribution.json?key=02081b8b-e208-40be-9ff4-8f8a0cbed44b');
+          const myJson = await response.json(); //extract JSON from the http response
+          if (myJson.meta.code === 200) {
+              console.log(myJson.response);
+              console.log(myJson.response.reviews_count);
+              for (let i = 0; i < myJson.response.reviews_distribution.length; i++) {
+                  const element = myJson.response.reviews_distribution[i];
+                  if (element.stars === 1) {
+                      document.getElementsByClassName("star-1 js-trust-line")[0].style.width = element.reviews_count / myJson.response.reviews_count * 100 + "%";
+                      document.getElementsByClassName("star-1 js-trust-number")[0].innerHTML = element.reviews_count;
+        
+                  } else if (element.stars === 2) {
+                      document.getElementsByClassName("star-2 js-trust-line")[0].style.width = element.reviews_count / myJson.response.reviews_count * 100 + "%";
+                      document.getElementsByClassName("star-2 js-trust-number")[0].innerHTML = element.reviews_count;
+        
+                  } else if (element.stars === 3) {
+                      document.getElementsByClassName("star-3 js-trust-line")[0].style.width = element.reviews_count / myJson.response.reviews_count * 100 + "%";
+                      document.getElementsByClassName("star-3 js-trust-number")[0].innerHTML = element.reviews_count;
+        
+                  } else if (element.stars === 4) {
+                      document.getElementsByClassName("star-4 js-trust-line")[0].style.width = element.reviews_count / myJson.response.reviews_count * 100 + "%";
+                      document.getElementsByClassName("star-4 js-trust-number")[0].innerHTML = element.reviews_count;
+        
+                  } else if (element.stars === 5) {
+                      document.getElementsByClassName("star-5 js-trust-line")[0].style.width = element.reviews_count / myJson.response.reviews_count * 100 + "%";
+                      document.getElementsByClassName("star-5 js-trust-number")[0].innerHTML = element.reviews_count;
+                  }
+              }
+          }
+        }
+        userAction();
+    </script>
+    <div class="trust-review js-trust-review">
+        <h2 class="trust-review__title"> Co říkají naši hosté</h2>
+        <h3 class="trust-review__subtitle"> Posledních 20 hodnocení</h3>
+        <div id="trust-review-list">
+        </div>
+        <button id="review-show-more" data-cy="showMore" aria-label="showMore" font-size="12px" class="review-show-more">Zobrazit více</button>
+        <div class="trust-review__logo-box">
+            <a class="trust-review__logo-link" href="http://trustyou.com" target="_blank">
+            <img class="trust-review__logo lazy loaded" src="https://api.trustyou.com/static/img/trustyou-attribution.png" data-src="https://api.trustyou.com/static/img/trustyou-attribution.png" alt="Co říkají naši hosté" data-was-processed="true" data-xblocker="passed"
+                style="visibility: visible;">
+            </a>
+        </div>
+    </div>
+    <script>
+        var reviewList = [];
+        var page_index = 0;
+        const showMoreBtn = document.querySelector('#review-show-more');
+        showMoreBtn.style.display = 'none';
+        
+        const setReviews = async() => {
+            const response = await fetch('https://api.trustyou.com/hotels/4119ffe4-7c56-4970-9ab0-a40ac89d2a79/reviews.json?scale=5&key=08969830-19c9-45d3-a58d-9db02c953656&page_size=100&lang_list=%5B%22cs%22%5D');
+            const myJson = await response.json();
+            if (myJson.meta.code === 200) {
+                reviewList = myJson.response.review_list;
+                if (reviewList.length > 20) {
+                    showMoreBtn.style.display = 'flex';
+                }
+                page_index = 0;
+                addReviewContents(page_index);
+            }
+        }
+        setReviews();
+        
+        function addReviewContents(index) {
+        
+            var buffer_size = 20;
+            const list = reviewList;
+        
+            if (list.length < (index + 1) * 20) {
+                buffer_size = list.length;
+                showMoreBtn.style.display = 'none';
+            } else {
+                buffer_size = (index + 1) * 20;
+            }
+            var listHML = "";
+            for (let i = index * 20; i < buffer_size; i++) {
+                const item = list[i];
+        
+                var reponse_text = '';
+                if (item.response_list.length > 0) {
+                    reponse_text = `<div class="trust-review-response">
+                                    <p class="trust-review-response__date">Reagováno na: ${item.response_list[0].created_localized}</p>
+                                    <p class="trust-review-response__text">${item.response_list[0].text}</p>
+                                </div>`;
+        
+                }
+        
+                var element = `<div class="trust-review__item">
+                        <div class="trust-review__top">
+                            <p class="trust-review__note-box">
+                                <span class="text">${item.score}</span>
+                                <span class="value"> /5</span>
+                            </p>
+                            <div class="trust-review__text-box">
+                                <p class="trust-review__author-box">
+                                    <span class="text">Autor: </span>
+                                    <span class="value">${item.author === null ? 'anonymní' : item.author}</span>
+                                </p>
+                                <p class="trust-review__date">
+                                    Hodnoceno: ${item.created_localized}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="trust-review__bottom">
+                            <div class="trust-review__comment">${item.text === null ? 'K této recenzi nejsou k dispozici žádné komentáře' : item.text}</div>
+                            ${reponse_text}
+                        </div>
+                    </div>`;
+        
+                listHML += element;
+            }
+        
+            let reviewContent = document.querySelector('#trust-review-list');
+            reviewContent.innerHTML += listHML;
+        }
+        
+        showMoreBtn.addEventListener('click', (event) => {
+            page_index++;
+            console.log(page_index);
+            addReviewContents(page_index);
+        });
+    </script>
+  </div>
+</div>
