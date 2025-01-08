@@ -9,19 +9,20 @@ handle = "Reviews\Banner"
 localeUrl[en-gb] = "/review"
 localeTitle[en-gb] = "Review"
 localeDescription[en-gb] = "localeDescription-EN"
-localeMeta_title[en-gb] = "localeMeta_title-EN"
+localeMeta_title[en-gb] = "Review"
 localeMeta_description[en-gb] = "localeMeta_description-EN"
 localeUrl[de] = "/rezension"
 localeTitle[de] = "Rezension"
 localeDescription[de] = "localeDescription-DE"
-localeMeta_title[de] = "localeMeta_title-DE"
+localeMeta_title[de] = "Rezension"
 localeMeta_description[de] = "localeMeta_description-DE"
 localeUrl[pl] = "/recenzja"
 localeTitle[pl] = "Recenzja"
 localeDescription[pl] = "localeDescription-PL"
-localeMeta_title[pl] = "localeMeta_title-PL"
+localeMeta_title[pl] = "Recenzja"
 localeMeta_description[pl] = "localeMeta_description-PL"
 ==
+
 <div class="container-fluid px-0 px-md-40 mt-4" id="banner">
   <div class="swiper banner-swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
       <div class="swiper-wrapper" id="swiper-wrapper-a110e8d9c5692a10fc" aria-live="off" style="transform: translate3d(0px, 0px, 0px);">
@@ -31,7 +32,7 @@ localeMeta_description[pl] = "localeMeta_description-PL"
               <div class="container-lg position-absolute h-100 start-50 top-0 translate-middle-x d-flex align-items-center justify-content-center">
                   <div class="d-flex flex-column gap-1 px-3">
                       <h1 class="mb-0 fs-72 lh-74 text-white text-center">
-                          Recenze
+                            {{ "review.title"|_ }}
                       </h1>
                   </div>
               </div>
@@ -242,7 +243,7 @@ localeMeta_description[pl] = "localeMeta_description-PL"
         }
     </style>
     <div class="trust-ranking__holder">
-        <h2 class="trust-ranking__title"> RECENZE</h2>
+        <h2 class="trust-ranking__title">{{ "review.title"|_ }}</h2>
         <div class="trust-ranking__item">
             <div class="trust-ranking__star-box">
                 <span class="fa fa-star checked"></span>
@@ -418,7 +419,7 @@ localeMeta_description[pl] = "localeMeta_description-PL"
     </style>
     </head>
     <div class="trust-info">
-        <h2 class="trust-info__main-title"> Typ cestujícího</h2>
+        <h2 class="trust-info__main-title">{{ "review.types"|_ }}</h2>
         <div class="trust-info__holder">
             <div class="trust-info__item js-trust-info--couple">
                 <div class="trust-info__svg-item">
@@ -432,7 +433,12 @@ localeMeta_description[pl] = "localeMeta_description-PL"
                     <span class="trust-info__svg-icon icon icon-trust-couple"></span>
                     <i class="ty-icon ty-icon-family"></i>
                 </div>
-                <div class="trust-info__text-box"> <span class="trust-info__title">Páry</span> <span class="trust-info__notes"> <span class="percent js-trust-info-percent"></span> <span class="number js-trust-info-number"></span> </span>
+                <div class="trust-info__text-box"> 
+                    <span class="trust-info__title">{{ "review.type1"|_ }}</span> 
+                    <span class="trust-info__notes"> 
+                        <span class="percent js-trust-info-percent"></span> 
+                        <span class="number js-trust-info-number"></span>
+                    </span>
                 </div>
             </div>
             <div class="trust-info__item js-trust-info--family">
@@ -446,7 +452,12 @@ localeMeta_description[pl] = "localeMeta_description-PL"
                     </svg>
                     <span class="trust-info__svg-icon icon icon-trust-family"></span> 
                 </div>
-                <div class="trust-info__text-box"> <span class="trust-info__title">Rodina</span> <span class="trust-info__notes"> <span class="percent js-trust-info-percent"></span> <span class="number js-trust-info-number"></span> </span>
+                <div class="trust-info__text-box">
+                    <span class="trust-info__title">{{ "review.type2"|_ }}</span> 
+                    <span class="trust-info__notes"> 
+                        <span class="percent js-trust-info-percent"></span>
+                        <span class="number js-trust-info-number"></span>
+                    </span>
                 </div>
             </div>
             <div class="trust-info__item js-trust-info--business">
@@ -460,7 +471,12 @@ localeMeta_description[pl] = "localeMeta_description-PL"
                     </svg>
                     <span class="trust-info__svg-icon icon icon-trust-business"></span> 
                 </div>
-                <div class="trust-info__text-box"> <span class="trust-info__title">Byznys</span> <span class="trust-info__notes"> <span class="percent js-trust-info-percent"></span> <span class="number js-trust-info-number"></span> </span>
+                <div class="trust-info__text-box">
+                    <span class="trust-info__title">{{ "review.type3"|_ }}</span> 
+                    <span class="trust-info__notes">
+                        <span class="percent js-trust-info-percent"></span>
+                        <span class="number js-trust-info-number"></span>
+                    </span>
                 </div>
             </div>
             <div class="trust-info__item js-trust-info--single">
@@ -474,7 +490,12 @@ localeMeta_description[pl] = "localeMeta_description-PL"
                     </svg>
                     <span class="trust-info__svg-icon icon icon-trust-single"></span> 
                 </div>
-                <div class="trust-info__text-box"> <span class="trust-info__title">Host cestující sám</span> <span class="trust-info__notes"> <span class="percent js-trust-info-percent"></span> <span class="number js-trust-info-number"></span> </span>
+                <div class="trust-info__text-box">
+                    <span class="trust-info__title">{{ "review.type4"|_ }}</span> 
+                    <span class="trust-info__notes">
+                        <span class="percent js-trust-info-percent"></span>
+                        <span class="number js-trust-info-number"></span>
+                    </span>
                 </div>
             </div>
         </div>

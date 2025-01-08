@@ -28,3 +28,12 @@ contact.executive.heading: "Jednatel"
 contact.button.booking: "Chci rezervovat"
 contact.button.gdpr: "Zásady ochrany osobních údajů"
 contact.show_on_map: "Ukázat na mapě"
+
+review.title: "Recenze"
+review.types: "Typ cestujícího"
+review.type1: "Typ cestujícího"
+review.type2: "Typ cestujícího"
+review.type3: "Typ cestujícího"
+review.type4: "Typ cestujícího"
+
+voucher.title: "Dárkové poukazy"

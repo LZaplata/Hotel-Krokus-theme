@@ -26,4 +26,22 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '1'
+    -
+        title: 'Hostinec Hvězda'
+        type: url
+        url: 'https://www.hotelhvezda.cz/hostinec/'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'
+    -
+        title: 'Restaurace Hořec'
+        type: url
+        url: 'https://www.hotelhorec.com/restaurace'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'                        
 name: Partners

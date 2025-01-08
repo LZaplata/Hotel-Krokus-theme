@@ -41,3 +41,12 @@ Datum: "Datum"
 Rezervace OD: "Reservierung VON"
 Rezervace DO: "Reservierung BIS"
 Odeslat formulář: "Sende Formular"
+
+review.title: "Rezension"
+review.types: "Art des Passagiers"
+review.type1: "Paare"
+review.type2: "Familien"
+review.type3: "Geschäft"
+review.type4: "Allein reisender Gast"
+
+voucher.title: "Geschenkgutscheine"

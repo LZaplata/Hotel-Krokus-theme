@@ -41,3 +41,12 @@ Datum: "Date"
 Rezervace OD: "Reservation FROM"
 Rezervace DO: "Reservation UNTIL"
 Odeslat formulář: "Send form"
+
+review.title: "Reviews"
+review.types: "Passenger type"
+review.type1: "Couples"
+review.type2: "Family"
+review.type3: "Business"
+review.type4: "Guest traveling alone"
+
+voucher.title: "Gift vouchers"

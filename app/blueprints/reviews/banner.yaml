@@ -1,7 +1,7 @@
-uuid: 84a8e440-a794-4c7c-8c99-1fbbd797d980
+uuid: 83f0ede7-9070-4ecb-9df6-68a788355081
 handle: Reviews\Banner
 type: structure
-name: Recenze
+name: Bonus
 showExport: false
 showImport: false
 multisite: true
@@ -10,15 +10,15 @@ structure:
     maxDepth: 1
 
 primaryNavigation:
-    label: Kontakt
-    icon: icon-phone
-    order: 60
+    label: Bonus
+    icon: icon-plus
+    order: 40
 
 navigation:
     label: Banner
     icon: icon-file-image-o
     order: 10
-    parent: Reviews\Banner
+    parent: Bonus\Banner
 
 fields:
     _banner:

@@ -55,26 +55,26 @@ items:
                     title: Restaurant
                 pl:
                     title: Restauracja
-    -
-        title: Wellness
-        nesting: null
-        type: cms-page
-        url: null
-        code: ''
-        reference: wellness
-        cmsPage: null
-        replace: null
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-            locale:
-                en-gb:
-                    title: Wellness
-                de:
-                    title: Wohlbefinden
-                pl:
-                    title: Wellness
+    # -
+    #     title: Wellness
+    #     nesting: null
+    #     type: cms-page
+    #     url: null
+    #     code: ''
+    #     reference: wellness
+    #     cmsPage: null
+    #     replace: null
+    #     viewBag:
+    #         isHidden: '0'
+    #         cssClass: ''
+    #         isExternal: '0'
+    #         locale:
+    #             en-gb:
+    #                 title: Wellness
+    #             de:
+    #                 title: Wohlbefinden
+    #             pl:
+    #                 title: Wellness
     -
         title: Galerie
         nesting: null
@@ -96,7 +96,7 @@ items:
                 pl:
                     title: Galeria
     -
-        title: Bonus
+        title: Pro firmy a skupiny
         nesting: null
         type: cms-page
         url: null
@@ -110,11 +110,31 @@ items:
             isExternal: '0'
             locale:
                 en-gb:
-                    title: Bonus
+                    title: For companies
                 de:
-                    title: Bonus
+                    title: Für Firmen
                 pl:
-                    title: Bonus
+                    title: Dla firm
+    -
+        title: Dárkové poukazy
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: darkove-poukazy
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: Gift vouchers
+                de:
+                    title: Geschenkgutscheine
+                pl:
+                    title: Bony podarunkowe
     -
         title: Kontakt
         nesting: null
