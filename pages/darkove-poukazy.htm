@@ -27,7 +27,6 @@ use October\Rain\Support\Facades\Lang;
 
 function onStart()
 {
-    // Získáme aktuální jazyk z URL
     $locale = request()->segment(1); // První segment URL (např. 'en', 'cs')
 
     // Nastavíme jazyk na základě URL segmentu
@@ -44,28 +43,28 @@ function onStart()
 ?>
 ==
 <div class="container-fluid px-0 px-md-40 mt-4" id="banner">
-  <div class="swiper banner-swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-      <div class="swiper-wrapper" id="swiper-wrapper-a110e8d9c5692a10fc" aria-live="off" style="transform: translate3d(0px, 0px, 0px);">
-          <div class="swiper-slide position-relative swiper-slide-active" role="group" aria-label="1 / 1" style="width: 1840px;">
-              <img src="https://www.hotelkrokus.cz/storage/app/uploads/public/63a/069/b3f/63a069b3f112b203558967.jpg" alt="" class="w-100">
-              <div class="position-absolute w-100 h-100 start-0 top-0 gradient"></div>
-              <div class="container-lg position-absolute h-100 start-50 top-0 translate-middle-x d-flex align-items-center justify-content-center">
-                  <div class="d-flex flex-column gap-1 px-3">
-                      <h1 class="mb-0 fs-72 lh-74 text-white text-center">
-                            {{ "voucher.title"|_ }}
-                      </h1>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="swiper-button-next rounded-circle transition swiper-button-disabled swiper-button-lock" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-a110e8d9c5692a10fc" aria-disabled="true">
-          <img src="https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/images/icons/arrow-right.svg" alt="right">
-      </div>
-      <div class="swiper-button-prev rounded-circle transition swiper-button-disabled swiper-button-lock" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-a110e8d9c5692a10fc" aria-disabled="true">
-          <img src="https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/images/icons/arrow-left.svg" alt="left">
-      </div>
-      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-  </div>
+    <div class="swiper banner-swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+        <div class="swiper-wrapper" id="swiper-wrapper-a110e8d9c5692a10fc" aria-live="off" style="transform: translate3d(0px, 0px, 0px);">
+            <div class="swiper-slide position-relative swiper-slide-active" role="group" aria-label="1 / 1" style="width: 1840px;">
+                <img src="https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/images/background/hotelkrokus_winter-2.jpg" alt="" class="w-100">
+                <div class="position-absolute w-100 h-100 start-0 top-0 gradient"></div>
+                <div class="container-lg position-absolute h-100 start-50 top-0 translate-middle-x d-flex align-items-center justify-content-center">
+                    <div class="d-flex flex-column gap-1 px-3">
+                        <h1 class="mb-0 fs-72 lh-74 text-white text-center">
+                                {{ "voucher.title"|_ }}
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next rounded-circle transition swiper-button-disabled swiper-button-lock" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-a110e8d9c5692a10fc" aria-disabled="true">
+            <img src="https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/images/icons/arrow-right.svg" alt="right">
+        </div>
+        <div class="swiper-button-prev rounded-circle transition swiper-button-disabled swiper-button-lock" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-a110e8d9c5692a10fc" aria-disabled="true">
+            <img src="https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/images/icons/arrow-left.svg" alt="left">
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
 </div>
 
 <div class="container-fluid pt-5">

@@ -35,5 +35,10 @@ review.type1: "Typ cestujícího"
 review.type2: "Typ cestujícího"
 review.type3: "Typ cestujícího"
 review.type4: "Typ cestujícího"
+review.cites: "Co říkají naši hosté"
+review.last_20: "Posledních 20 hodnocení"
+review.show_more: "Zobrazit více"
 
 voucher.title: "Dárkové poukazy"
+
+contacts.title: "Kontakt"

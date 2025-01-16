@@ -48,5 +48,10 @@ review.type1: "Paare"
 review.type2: "Familien"
 review.type3: "Geschäft"
 review.type4: "Allein reisender Gast"
+review.cites: "Was sagen unsere Gäste",
+review.last_20: "Die letzten 20 Bewertungen",
+review.show_more: "Mehr anzeigen"
 
 voucher.title: "Geschenkgutscheine"
+
+contacts.title: "Kontakt"

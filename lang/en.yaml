@@ -48,5 +48,10 @@ review.type1: "Couples"
 review.type2: "Family"
 review.type3: "Business"
 review.type4: "Guest traveling alone"
+review.cites: "What our guests say",
+review.last_20: "Last 20 reviews",
+review.show_more: "Show more"
 
 voucher.title: "Gift vouchers"
+
+contacts.title: "Kontakt"

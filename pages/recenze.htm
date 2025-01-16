@@ -22,12 +22,32 @@ localeDescription[pl] = "localeDescription-PL"
 localeMeta_title[pl] = "Recenzja"
 localeMeta_description[pl] = "localeMeta_description-PL"
 ==
+<?php
+use October\Rain\Support\Facades\Lang;
+
+function onStart()
+{
+    $locale = request()->segment(1); // První segment URL (např. 'en', 'cs')
+
+    // Nastavíme jazyk na základě URL segmentu
+    if ($locale === 'en') {
+        $this['reviewUrl'] = 'https://api.trustyou.com/hotels/4119ffe4-7c56-4970-9ab0-a40ac89d2a79/reviews.json?scale=5&key=08969830-19c9-45d3-a58d-9db02c953656&page_size=100&lang_list=%5B%22en%22%2C%22pl%22%2C%22de%22%5D';
+    } elseif ($locale === 'pl') {
+        $this['reviewUrl'] = 'https://api.trustyou.com/hotels/4119ffe4-7c56-4970-9ab0-a40ac89d2a79/reviews.json?scale=5&key=08969830-19c9-45d3-a58d-9db02c953656&page_size=100&lang_list=%5B%22en%22%2C%22pl%22%2C%22de%22%5D';
+    } elseif ($locale === 'de') {
+        $this['reviewUrl'] = 'https://api.trustyou.com/hotels/4119ffe4-7c56-4970-9ab0-a40ac89d2a79/reviews.json?scale=5&key=08969830-19c9-45d3-a58d-9db02c953656&page_size=100&lang_list=%5B%22en%22%2C%22pl%22%2C%22de%22%5D';
+    } else {
+        $this['reviewUrl'] = 'https://api.trustyou.com/hotels/4119ffe4-7c56-4970-9ab0-a40ac89d2a79/trust_score_distribution.json?key=02081b8b-e208-40be-9ff4-8f8a0cbed44b';
+    }
+}
+?>
+==
 
 <div class="container-fluid px-0 px-md-40 mt-4" id="banner">
   <div class="swiper banner-swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
       <div class="swiper-wrapper" id="swiper-wrapper-a110e8d9c5692a10fc" aria-live="off" style="transform: translate3d(0px, 0px, 0px);">
           <div class="swiper-slide position-relative swiper-slide-active" role="group" aria-label="1 / 1" style="width: 1840px;">
-              <img src="https://www.hotelkrokus.cz/storage/app/uploads/public/63a/069/b3f/63a069b3f112b203558967.jpg" alt="" class="w-100">
+              <img src="https://www.hotelkrokus.cz/storage/app/uploads/public/678/951/302/678951302a024027492176.jpg" alt="" class="w-100">
               <div class="position-absolute w-100 h-100 start-0 top-0 gradient"></div>
               <div class="container-lg position-absolute h-100 start-50 top-0 translate-middle-x d-flex align-items-center justify-content-center">
                   <div class="d-flex flex-column gap-1 px-3">
@@ -565,11 +585,11 @@ localeMeta_description[pl] = "localeMeta_description-PL"
         userAction();
     </script>
     <div class="trust-review js-trust-review">
-        <h2 class="trust-review__title"> Co říkají naši hosté</h2>
-        <h3 class="trust-review__subtitle"> Posledních 20 hodnocení</h3>
+        <h2 class="trust-review__title">{{ "review.cites"|_ }}</h2>
+        <h3 class="trust-review__subtitle">{{ "review.last_20"|_ }}</h3>
         <div id="trust-review-list">
         </div>
-        <button id="review-show-more" data-cy="showMore" aria-label="showMore" font-size="12px" class="review-show-more">Zobrazit více</button>
+        <button id="review-show-more" data-cy="showMore" aria-label="showMore" font-size="12px" class="review-show-more">{{ "review.show_more"|_ }}</button>
         <div class="trust-review__logo-box">
             <a class="trust-review__logo-link" href="http://trustyou.com" target="_blank">
             <img class="trust-review__logo lazy loaded" src="https://api.trustyou.com/static/img/trustyou-attribution.png" data-src="https://api.trustyou.com/static/img/trustyou-attribution.png" alt="Co říkají naši hosté" data-was-processed="true" data-xblocker="passed"
@@ -578,13 +598,14 @@ localeMeta_description[pl] = "localeMeta_description-PL"
         </div>
     </div>
     <script>
+        const url = '{{ reviewUrl|escape('js') }}';
         var reviewList = [];
         var page_index = 0;
         const showMoreBtn = document.querySelector('#review-show-more');
         showMoreBtn.style.display = 'none';
         
         const setReviews = async() => {
-            const response = await fetch('https://api.trustyou.com/hotels/4119ffe4-7c56-4970-9ab0-a40ac89d2a79/reviews.json?scale=5&key=08969830-19c9-45d3-a58d-9db02c953656&page_size=100&lang_list=%5B%22cs%22%5D');
+            const response = await fetch(url);
             const myJson = await response.json();
             if (myJson.meta.code === 200) {
                 reviewList = myJson.response.review_list;
