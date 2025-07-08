@@ -55,6 +55,26 @@ items:
                     title: Restaurant
                 pl:
                     title: Restauracja
+    -
+        title: Sauna
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: sauna
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            locale:
+                en-gb:
+                    title: Sauna
+                de:
+                    title: Sauna
+                pl:
+                    title: Sauna                    
     # -
     #     title: Wellness
     #     nesting: null

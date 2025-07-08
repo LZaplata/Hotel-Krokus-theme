@@ -9,14 +9,23 @@ items:
             cssClass: ''
             isExternal: '1'
     -
-        title: 'Enzian restaurant'
+        title: 'Restaurace Hořec'
         type: url
-        url: 'http://www.enzianrestaurant.cz/'
+        url: 'https://www.hotelhorec.com/restaurace'
         code: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
-            isExternal: '1'
+            isExternal: '1' 
+    -
+        title: 'Chata Lesovna'
+        type: url
+        url: 'https://www.chatalesovna.cz/cs/'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '1'              
     -
         title: 'DELI POST'
         type: url
@@ -35,13 +44,5 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '1'
-    -
-        title: 'Restaurace Hořec'
-        type: url
-        url: 'https://www.hotelhorec.com/restaurace'
-        code: ''
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '1'                        
+                     
 name: Partners

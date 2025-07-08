@@ -1,3 +1,25 @@
+==
+<?php
+use October\Rain\Support\Facades\Lang;
+
+function onStart()
+{
+    $locale = request()->segment(1); // První segment URL (např. 'en', 'cs')
+
+    // Nastavíme správnou URL pro GDPR soubor
+    if ($locale === 'en') {
+        $this['gdprUrl'] = 'https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/files/hotel_krokus-vop_en.pdf';
+    } elseif ($locale === 'pl') {
+        $this['gdprUrl'] = 'https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/files/hotel_krokus-vop_pl.pdf';
+    } elseif ($locale === 'de') {
+        $this['gdprUrl'] = 'https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/files/hotel_krokus-vop_de.pdf';
+    } else {
+        $this['gdprUrl'] = 'https://www.hotelkrokus.cz/themes/lzaplata-hotelkrokus/assets/files/hotel_krokus-vop_cz.pdf';
+    }
+}
+?>
+==
+
 <footer>
     {% if footer.advantages_enabled and footer.advantages.count > 0 %}
         {% partial ["advantages/", footer.advantages_layout]|join advantages=footer.advantages %}
@@ -81,8 +103,13 @@
                 </div>
 
                 <div class="col text-start mt-4 text-sm-center mt-sm-0">
+                    {% set locale = this.param.locale %}
+
+                    {% if locale == 'en' %}
+                        ncm
+                    {% endif %}
                     {% if contact.gdpr_file %}
-                        <a href="{{ contact.gdpr_file.path }}" target="_blank" class="nav-link fs-14 text-white opacity-65 opacity-100-hover fw-regular transition d-inline-block">
+                        <a href="{{ gdprUrl }}" target="_blank" class="nav-link fs-14 text-white opacity-65 opacity-100-hover fw-regular transition d-inline-block">
                             {{ "footer.gdpr"|_ }}
                         </a>
                     {% endif %}
