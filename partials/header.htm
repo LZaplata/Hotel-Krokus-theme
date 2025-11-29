@@ -18,25 +18,14 @@
             <div class="d-none d-sm-flex">
                 {% if sitepicker.isEnabled %}
                     <div class="d-none me-3 sitepicker d-xxl-flex">
-                        <ul class="list-unstyled mb-0 d-flex align-items-center">
-                            <li class="position-relative d-flex py-2">
-                                <img src="{{ ['assets/images/icons/lang-', this.site.code, '.svg']|join|theme }}" alt="{{ this.site.code }}">
-
-                                <img src="{{ 'assets/images/icons/caret-down.svg'|theme }}" alt="caret" class="ms-1">
-
-
-                                <div class="position-absolute top-100 transition">
-                                    <ul class="list-unstyled p-2 m-2 d-flex flex-column gap-2 bg-white">
-                                        {% for site in sitepicker.sites %}
-                                            <li>
-                                                <a href="{{ site.url }}" class="d-flex">
-                                                    <img src="{{ ['assets/images/icons/lang-', site.code, '.svg']|join|theme }}" alt="{{ site.code }}" class="transition">
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </li>
+                        <ul class="list-unstyled d-flex gap-2 mb-0">
+                            {% for site in sitepicker.sites %}
+                                <li>
+                                    <a href="{{ site.url }}" class="d-flex">
+                                        <img width="24" height="24" src="{{ ['assets/images/icons/lang-', site.code, '.svg']|join|theme }}" alt="{{ site.code }}" class="transition">
+                                    </a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 {% endif %}

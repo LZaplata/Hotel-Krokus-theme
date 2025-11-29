@@ -46,6 +46,40 @@ handle = "Settings\Footer"
             'assets/css/swiper-bundle.css',
             'assets/css/flatpickr.min.css',
         ]|theme }}" />
+
+        <!-- META Pixel + Consent Mode INIT -->
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Výchozí nastavení – vše zablokováno
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'functionality_storage': 'denied',
+            'personalization_storage': 'denied',
+            'security_storage': 'granted'
+        });
+
+        // Inicializace Meta Pixelu
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('consent', 'revoke'); // výchozí stav = blokováno
+        fbq('init', '1780733319319328'); // tvoje Pixel ID
+        fbq('track', 'PageView');
+        </script>
+
+        <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1780733319319328&ev=PageView&noscript=1"/>
+        </noscript>        
     </head>
 
     <body>
@@ -53,6 +87,16 @@ handle = "Settings\Footer"
 
         <main>
             {% page %}
+
+            <div id="cookie-consent" style="
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: #fff; color: #000; padding: 10px;
+            text-align: center; z-index: 9999; border-top: 1px solid #ccc;
+            ">
+            Tento web používá cookies pro měření návštěvnosti z reklam. <br>
+            <button class="btn btn-green align-items-center d-inline-flex" onclick="acceptCookies()">Souhlasím</button>
+            <button class="btn btn-outline-white btn-sm" onclick="declineCookies()">Odmítám</button>
+            </div>            
         </main>
 
         {% partial "footer" %}
@@ -69,6 +113,37 @@ handle = "Settings\Footer"
             'assets/js/flatpickr.min.js',
             'assets/js/theme.js',
         ]|theme }}"></script>
+
+        <script>
+        function acceptCookies() {
+            fbq('consent', 'grant'); // aktivuje Meta Pixel
+            document.getElementById('cookie-consent').style.display = 'none';
+            localStorage.setItem('cookie_consent', 'granted');
+        }
+
+        function declineCookies() {
+            fbq('consent', 'revoke');
+            document.getElementById('cookie-consent').style.display = 'none';
+            localStorage.setItem('cookie_consent', 'denied');
+        }
+
+        // Pokud uživatel souhlas dal dříve
+        window.addEventListener('DOMContentLoaded', () => {
+            const consent = localStorage.getItem('cookie_consent');
+            if (consent === 'granted') {
+            fbq('consent', 'grant');
+            document.getElementById('cookie-consent').style.display = 'none';
+            } else if (consent === 'denied') {
+            fbq('consent', 'revoke');
+            document.getElementById('cookie-consent').style.display = 'none';
+            }
+        });
+        </script>     
+        
+
+        <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="STH61pLNgigizO4v5rczW";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+        </script>        
 
         {% scripts %}
         {% framework extras %}
